@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zen Mujer | Zen Hombre — Catálogo</title>
+  <meta name="description" content="Catálogo Zen Mujer | Zen Hombre — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
+  <!-- Open Graph simple -->
+  <meta property="og:title" content="Zen Mujer | Zen Hombre" />
+  <meta property="og:description" content="Catálogo Zen — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
+  <meta property="og:image" content="https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandWhite: '#FFFFFF',
+            brandSoftPink: '#FCE7F0',
+            brandBeige: '#F5EBE6',
+            brandAccentPink: '#E8A5C2',
+            brandText: '#4A3E3D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Pequeñas mejoras de accesibilidad y transición */
+    :root { color-scheme: light; }
+    .focus-ring:focus { outline: 3px solid rgba(232,165,194,0.25); outline-offset: 2px; }
+    .product-card img { transition: transform .25s ease; }
+    .product-card:hover img { transform: scale(1.02); }
+  </style>
+</head>
+<body class="bg-brandWhite text-brandText font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- Top banner -->
+  <div class="bg-brandSoftPink text-brandText text-center py-2 text-xs md:text-sm font-medium tracking-wide">
+    ✨ Encuentra tu armonía y estilo. Envíos locales y atención personalizada por WhatsApp ✨
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white/90 backdrop-blur-md z-40 border-b border-brandBeige">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-xl md:text-2xl font-light tracking-widest text-brandText uppercase">
+          Zen <span class="text-brandAccentPink font-normal">Mujer</span> | Zen <span class="text-brandAccentPink font-normal">Hombre</span>
+        </div>
+        <nav class="hidden md:flex gap-4 text-sm text-gray-600">
+          <a href="#catalogo" class="hover:text-brandText">Catálogo</a>
+          <a href="#confianza" class="hover:text-brandText">Envíos</a>
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button aria-label="Abrir carrito" onclick="toggleCart()" class="relative bg-brandBeige p-2.5 rounded-full hover:bg-brandSoftPink focus-ring">
+          <i class="fa-solid fa-bag-shopping text-brandText text-lg"></i>
+          <span id="cart-count" class="absolute -top-1 -right-1 bg-brandAccentPink text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-brandBeige/40 py-12 md:py-16 text-center px-4 mb-8">
+    <div class="max-w-2xl mx-auto">
+      <span class="text-xs uppercase tracking-widest text-brandAccentPink font-bold">Colección Balance</span>
+      <h2 class="text-3xl md:text-4xl font-light my-3 text-brandText">Siente la comodidad en cada prenda</h2>
+      <p class="text-sm md:text-base text-gray-600 mb-6">Diseños pensados para tu bienestar diario. Telas suaves, tonos neutros y estilo atemporal.</p>
+      <a href="#catalogo" class="inline-block bg-brandAccentPink text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity shadow-sm">
+        Explorar Catálogo
+      </a>
+    </div>
+  </section>
+
+  <!-- Catalogo -->
+  <main id="catalogo" class="max-w-6xl mx-auto px-4 flex-grow w-full mb-16">
+    <div class="flex justify-center gap-2 md:gap-4 mb-8">
+      <button onclick="filterProducts('all')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-brandBeige bg-brandBeige text-brandText">Todos</button>
+      <button onclick="filterProducts('mujer')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-brandBeige text-gray-600 hover:bg-brandSoftPink">Zen Mujer</button>
+      <button onclick="filterProducts('hombre')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-brandBeige text-gray-600 hover:bg-brandSoftPink">Zen Hombre</button>
+    </div>
+
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Productos renderizados por JS -->
+    </div>
+  </main>
+
+  <!-- Confianza -->
+  <section id="confianza" class="border-t border-brandBeige bg-brandBeige/20 py-8 px-4">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-sm">
+      <div class="p-4">
+        <i class="fa-solid fa-truck-fast text-brandAccentPink text-2xl mb-2"></i>
+        <h4 class="font-semibold mb-1">Entregas Ágiles</h4>
+        <p class="text-xs text-gray-500">Coordinamos el envío directo a tu puerta.</p>
+      </div>
+      <div class="p-4">
+        <i class="fa-solid fa-comments text-brandAccentPink text-2xl mb-2"></i>
+        <h4 class="font-semibold mb-1">Asesoría Personalizada</h4>
+        <p class="text-xs text-gray-500">Te ayudamos a elegir tu talle ideal por WhatsApp.</p>
+      </div>
+      <div class="p-4">
+        <i class="fa-solid fa-shield-heart text-brandAccentPink text-2xl mb-2"></i>
+        <h4 class="font-semibold mb-1">Calidad Garantizada</h4>
+        <p class="text-xs text-gray-500">Prendas suaves y duraderas para tu día a día.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brandText text-white py-6 text-center text-xs">
+    <p>© 2026 Zen Mujer | Zen Hombre. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Cart modal -->
+  <div id="cart-modal" class="fixed inset-0 bg-black/40 z-50 hidden flex justify-end">
+    <div class="bg-white w-full max-w-md h-full p-6 flex flex-col shadow-xl">
+      <div class="flex justify-between items-center border-b pb-4">
+        <h3 class="text-lg font-medium text-brandText">Tu Carrito Zen</h3>
+        <button onclick="toggleCart()" class="text-gray-400 hover:text-brandText focus-ring" aria-label="Cerrar carrito">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+
+      <div id="cart-items" class="flex-grow overflow-y-auto py-4 space-y-4">
+        <!-- JS -->
+      </div>
+
+      <div class="border-t pt-4 space-y-3">
+        <div class="flex justify-between font-semibold text-brandText text-lg">
+          <span>Total estimado:</span>
+          <span id="cart-total">$0</span>
+        </div>
+        <button id="whatsapp-checkout" class="w-full bg-green-600 text-white py-3 rounded-full font-medium hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+
+  <!-- Lógica JS -->
+  <script>
+    // Número de WhatsApp: si necesitás cambiarlo, editá PHONE_NUMBER_PREFIX y PHONE_NUMBER (sin +).
+    // He asumido: Argentina móvil -> 5492235700480 (54 país, 9 móvil, luego sin 0 inicial).
+    const PHONE_NUMBER = "5492235700480";
+
+    // Productos con tus imágenes (precios inventados)
+    const products = [
+      { id: 1, name: "Top Floral Rosa", category: "mujer", price: 16800, img: "https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" },
+      { id: 2, name: "Vestido Relax Beige", category: "mujer", price: 22500, img: "https://i.ibb.co/GffGLkSp/604421852-18353029993165033-2567428724406563331-n.jpg" },
+      { id: 3, name: "Buzo Oversize Gris", category: "mujer", price: 29900, img: "https://i.ibb.co/ksXDFMZw/605877038-18353030002165033-4756567020471813223-n.jpg" },
+      { id: 4, name: "Remera Básica Zen", category: "hombre", price: 15900, img: "https://i.ibb.co/TxsnTqSC/604853587-18353030011165033-8027889818754600951-n.jpg" },
+      { id: 5, name: "Pantalón Jogger Relax", category: "hombre", price: 24300, img: "https://i.ibb.co/mV9pnnQY/605464482-18353030029165033-2234114027883973075-n.jpg" },
+      { id: 6, name: "Camisa Lino Natural", category: "hombre", price: 19900, img: "https://i.ibb.co/7xc8pLMj/604471305-18353030020165033-7063406124973929134-n.jpg" }
+    ];
+
+    // Carrito persistente
+    let cart = [];
+
+    // Utils
+    const $ = id => document.getElementById(id);
+
+    function saveCart() {
+      localStorage.setItem('zen_cart_v1', JSON.stringify(cart));
+    }
+    function loadCart() {
+      try {
+        const raw = localStorage.getItem('zen_cart_v1');
+        cart = raw ? JSON.parse(raw) : [];
+      } catch(e) { cart = []; }
+    }
+
+    // Render productos
+    function renderProducts(items) {
+      const grid = $("product-grid");
+      grid.innerHTML = items.map(p => `
+        <article class="product-card bg-white rounded-2xl overflow-hidden border border-brandBeige shadow-sm hover:shadow-md transition-shadow flex flex-col" aria-labelledby="p-${p.id}-name">
+          <img loading="lazy" src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover">
+          <div class="p-4 flex flex-col flex-grow">
+            <span class="text-xs uppercase text-brandAccentPink font-bold mb-1">${p.category === 'mujer' ? 'Zen Mujer' : 'Zen Hombre'}</span>
+            <h3 id="p-${p.id}-name" class="font-medium text-brandText text-base mb-2">${p.name}</h3>
+            <p class="text-sm text-gray-500 mb-3">Diseño cómodo y atemporal.</p>
+            <div class="mt-auto flex justify-between items-center pt-2">
+              <span class="font-semibold text-brandText">$${p.price.toLocaleString()}</span>
+              <button onclick="addToCart(${p.id})" class="bg-brandBeige hover:bg-brandSoftPink text-brandText text-xs px-3 py-2 rounded-full font-medium transition-colors focus-ring" aria-label="Agregar ${p.name} al carrito">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterProducts(category) {
+      if (category === 'all') renderProducts(products);
+      else renderProducts(products.filter(p => p.category === category));
+    }
+
+    // Carrito
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if(!product) return;
+      const item = cart.find(i => i.id === productId);
+      if (item) item.quantity++;
+      else cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+      saveCart();
+      updateCartUI();
+    }
+
+    function changeQuantity(id, delta) {
+      const it = cart.find(i => i.id === id);
+      if (!it) return;
+      it.quantity += delta;
+      if (it.quantity <= 0) cart = cart.filter(x => x.id !== id);
+      saveCart();
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const cartItems = $("cart-items");
+      const cartCount = $("cart-count");
+      const cartTotal = $("cart-total");
+
+      const totalCount = cart.reduce((acc, i) => acc + i.quantity, 0);
+      const totalPrice = cart.reduce((acc, i) => acc + i.price * i.quantity, 0);
+
+      cartCount.innerText = totalCount;
+      cartTotal.innerText = `$${totalPrice.toLocaleString()}`;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `<p class="text-center text-gray-400 text-sm my-auto">El carrito está vacío.</p>`;
+        return;
+      }
+
+      cartItems.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between border-b pb-3">
+          <div>
+            <h4 class="text-sm font-medium text-brandText">${item.name}</h4>
+            <p class="text-xs text-gray-500">$${item.price.toLocaleString()} x ${item.quantity}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 bg-brandBeige rounded flex items-center justify-center text-xs font-bold focus-ring">-</button>
+            <span class="text-xs">${item.quantity}</span>
+            <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 bg-brandBeige rounded flex items-center justify-center text-xs font-bold focus-ring">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart() {
+      $("cart-modal").classList.toggle('hidden');
+    }
+
+    // Enviar por WhatsApp
+    function sendToWhatsApp() {
+      if (cart.length === 0) {
+        alert("Agrega al menos un producto al carrito para realizar el pedido.");
+        return;
+      }
+      let message = "¡Hola! Quisiera realizar el siguiente pedido desde la web:%0A%0A";
+      cart.forEach(item => {
+        message += `• ${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toLocaleString()}%0A`;
+      });
+      const total = cart.reduce((acc, it) => acc + it.price * it.quantity, 0);
+      message += `%0A*Total estimado:* $${total.toLocaleString()}%0A%0A¿Tienen disponibilidad de stock?`;
+      // Abrir WA
+      const url = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
+      window.open(url, '_blank');
+    }
+
+    // Eventos
+    document.getElementById('whatsapp-checkout').addEventListener('click', sendToWhatsApp);
+
+    // Inicialización
+    loadCart();
+    renderProducts(products);
+    updateCartUI();
+  </script>
+</body>
+</html>
