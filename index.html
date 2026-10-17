@@ -5,11 +5,38 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zen Mujer | Zen Hombre — Catálogo</title>
   <meta name="description" content="Catálogo Zen Mujer | Zen Hombre — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
+  <link rel="canonical" href="https://zenmujer.com/" />
+  <meta name="theme-color" content="#4A3E3D" />
+
   <!-- Open Graph simple -->
   <meta property="og:title" content="Zen Mujer | Zen Hombre" />
   <meta property="og:description" content="Catálogo Zen — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
   <meta property="og:image" content="https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zen Mujer | Zen Hombre" />
+  <meta name="twitter:description" content="Catálogo Zen — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
+  <meta name="twitter:image" content="https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Structured data (Organization + sameAs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zen Mujer | Zen Hombre",
+    "url": "https://zenmujer.com",
+    "logo": "https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg",
+    "sameAs": [
+      "https://www.facebook.com/zenmujer",
+      "https://www.instagram.com/zenmujer"
+    ]
+  }
+  </script>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -32,6 +59,8 @@
   <style>
     /* Pequeñas mejoras de accesibilidad y transición */
     :root { color-scheme: light; }
+    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem 1rem; background: #fff; border-radius: 6px; z-index: 60; }
     .focus-ring:focus { outline: 3px solid rgba(232,165,194,0.25); outline-offset: 2px; }
     .product-card img { transition: transform .25s ease; }
     .product-card:hover img { transform: scale(1.02); }
@@ -57,6 +86,8 @@
   </style>
 </head>
 <body class="bg-brandWhite text-brandText font-sans antialiased flex flex-col min-h-screen">
+
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
 
   <!-- Top banner -->
   <div class="bg-brandSoftPink text-brandText text-center py-2 text-xs md:text-sm font-medium tracking-wide">
@@ -210,119 +241,4 @@
         <button onclick="toggleCart()" class="text-gray-400 hover:text-brandText focus-ring" aria-label="Cerrar carrito">
           <i class="fa-solid fa-xmark text-xl"></i>
         </button>
-      </div>
 
-      <div id="cart-items" class="flex-grow overflow-y-auto py-4 space-y-4">
-        <!-- JS -->
-      </div>
-
-      <div class="border-t pt-4 space-y-3">
-        <div class="flex justify-between font-semibold text-brandText text-lg">
-          <span>Total estimado:</span>
-          <span id="cart-total">$0</span>
-        </div>
-        <button id="whatsapp-checkout" class="w-full bg-green-600 text-white py-3 rounded-full font-medium hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Pedido por WhatsApp
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast container -->
-  <div id="toast-area"></div>
-
-  <!-- Font Awesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
-
-  <!-- Lógica JS -->
-  <script>
-    // Número de WhatsApp: por defecto
-    const PHONE_NUMBER = "5492235700480";
-
-    // Productos con tus imágenes (precios inventados)
-    const products = [
-      { id: 1, name: "Top Floral Rosa", category: "mujer", price: 16800, img: "https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" },
-      { id: 2, name: "Vestido Relax Beige", category: "mujer", price: 22500, img: "https://i.ibb.co/GffGLkSp/604421852-18353029993165033-2567428724406563331-n.jpg" },
-      { id: 3, name: "Buzo Oversize Gris", category: "mujer", price: 29900, img: "https://i.ibb.co/ksXDFMZw/605877038-18353030002165033-4756567020471813223-n.jpg" },
-      { id: 4, name: "Remera Básica Zen", category: "hombre", price: 15900, img: "https://i.ibb.co/TxsnTqSC/604853587-18353030011165033-8027889818754600951-n.jpg" },
-      { id: 5, name: "Pantalón Jogger Relax", category: "hombre", price: 24300, img: "https://i.ibb.co/mV9pnnQY/605464482-18353030029165033-2234114027883973075-n.jpg" },
-      { id: 6, name: "Camisa Lino Natural", category: "hombre", price: 19900, img: "https://i.ibb.co/7xc8pLMj/604471305-18353030020165033-7063406124973929134-n.jpg" }
-    ];
-
-    // Carrito persistente
-    let cart = [];
-
-    // Utils
-    const $ = id => document.getElementById(id);
-
-    function saveCart() {
-      localStorage.setItem('zen_cart_v1', JSON.stringify(cart));
-    }
-    function loadCart() {
-      try {
-        const raw = localStorage.getItem('zen_cart_v1');
-        cart = raw ? JSON.parse(raw) : [];
-      } catch(e) { cart = []; }
-    }
-
-    // Render productos
-    function renderProducts(items) {
-      const grid = $("product-grid");
-      grid.innerHTML = items.map(p => `
-        <article class="product-card bg-white rounded-2xl overflow-hidden border border-brandBeige shadow-sm hover:shadow-md transition-shadow flex flex-col" aria-labelledby="p-${p.id}-name">
-          <img loading="lazy" src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover" id="img-${p.id}">
-          <div class="p-4 flex flex-col flex-grow">
-            <span class="text-xs uppercase text-brandAccentPink font-bold mb-1">${p.category === 'mujer' ? 'Zen Mujer' : 'Zen Hombre'}</span>
-            <h3 id="p-${p.id}-name" class="font-medium text-brandText text-base mb-2">${p.name}</h3>
-            <p class="text-sm text-gray-500 mb-3">Diseño cómodo y atemporal.</p>
-            <div class="mt-auto flex justify-between items-center pt-2">
-              <span class="font-semibold text-brandText">$${p.price.toLocaleString()}</span>
-              <button onclick="addToCart(${p.id}, this)" class="bg-brandBeige hover:bg-brandSoftPink text-brandText text-xs px-3 py-2 rounded-full font-medium transition-colors focus-ring" aria-label="Agregar ${p.name} al carrito">
-                + Agregar
-              </button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-
-      populateMixAndMatchOptions();
-    }
-
-    function filterProducts(category) {
-      if (category === 'all') renderProducts(products);
-      else renderProducts(products.filter(p => p.category === category));
-    }
-
-    // Carrito
-    function addToCart(productId, btnEl) {
-      const product = products.find(p => p.id === productId);
-      if(!product) return;
-      const item = cart.find(i => i.id === productId);
-      if (item) item.quantity++;
-      else cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
-      saveCart();
-      updateCartUI();
-
-      try {
-        const img = document.getElementById('img-' + productId);
-        if (img) flyToCart(img, btnEl);
-      } catch(e){}
-
-      showToast(`Agregado: ${product.name}`);
-    }
-
-    function changeQuantity(id, delta) {
-      const it = cart.find(i => i.id === id);
-      if (!it) return;
-      it.quantity += delta;
-      if (it.quantity <= 0) cart = cart.filter(x => x.id !== id);
-      saveCart();
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      const cartItems = $("cart-items");
-      const cartCount = $("cart-count");
-      const cartTotal = $("cart-total");
-
-    
