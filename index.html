@@ -35,6 +35,25 @@
     .focus-ring:focus { outline: 3px solid rgba(232,165,194,0.25); outline-offset: 2px; }
     .product-card img { transition: transform .25s ease; }
     .product-card:hover img { transform: scale(1.02); }
+
+    /* Fly-to-cart animation */
+    .flying-img {
+      position: fixed;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      z-index: 1000;
+      transition: transform 0.8s cubic-bezier(.2,.8,.2,1), opacity 0.8s;
+      pointer-events: none;
+    }
+
+    /* Toast */
+    .toast { position: fixed; right: 20px; bottom: 20px; background: rgba(74,62,61,0.95); color: white; padding: 10px 14px; border-radius: 10px; z-index:2000; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+
+    /* Floating social bar */
+    .social-fixed { position: fixed; left: 18px; bottom: 80px; z-index: 2000; display:flex; flex-direction:column; gap:8px; }
+    .social-fixed a { width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:white; color:#4A3E3D; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
   </style>
 </head>
 <body class="bg-brandWhite text-brandText font-sans antialiased flex flex-col min-h-screen">
@@ -54,10 +73,21 @@
         <nav class="hidden md:flex gap-4 text-sm text-gray-600">
           <a href="#catalogo" class="hover:text-brandText">Catálogo</a>
           <a href="#confianza" class="hover:text-brandText">Envíos</a>
+          <a href="#crea-tu-look" class="hover:text-brandText">Crea tu look</a>
         </nav>
       </div>
 
       <div class="flex items-center gap-3">
+        <!-- Social icons in header -->
+        <div class="hidden md:flex items-center gap-2">
+          <a href="https://www.facebook.com/zenmujer" target="_blank" rel="noopener" aria-label="Facebook Zen Mujer" class="text-gray-600 hover:text-brandText">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/zenmujer" target="_blank" rel="noopener" aria-label="Instagram zenmujer" class="text-gray-600 hover:text-brandText">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+
         <button aria-label="Abrir carrito" onclick="toggleCart()" class="relative bg-brandBeige p-2.5 rounded-full hover:bg-brandSoftPink focus-ring">
           <i class="fa-solid fa-bag-shopping text-brandText text-lg"></i>
           <span id="cart-count" class="absolute -top-1 -right-1 bg-brandAccentPink text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
@@ -91,6 +121,49 @@
     </div>
   </main>
 
+  <!-- Crea tu look (Mix & Match) -->
+  <section id="crea-tu-look" class="max-w-6xl mx-auto px-4 mb-12">
+    <div class="bg-white rounded-2xl p-6 border border-brandBeige shadow-sm">
+      <h3 class="text-lg font-semibold mb-3">Crea tu look</h3>
+      <p class="text-sm text-gray-600 mb-4">Combina piezas de la colección y comparte tu look favorito por WhatsApp o guárdalo para más tarde.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="text-xs text-gray-500">Parte superior</label>
+          <select id="slot-top" class="w-full mt-1 p-2 border rounded focus-ring"></select>
+        </div>
+        <div>
+          <label class="text-xs text-gray-500">Parte inferior</label>
+          <select id="slot-bottom" class="w-full mt-1 p-2 border rounded focus-ring"></select>
+        </div>
+        <div>
+          <label class="text-xs text-gray-500">Capa / Exterior</label>
+          <select id="slot-outer" class="w-full mt-1 p-2 border rounded focus-ring"></select>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-col md:flex-row items-center gap-4">
+        <div id="look-preview" class="flex items-center gap-3 p-3 border rounded bg-brandBeige/40 w-full md:w-auto">
+          <img id="look-preview-img" src="https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" alt="Preview" class="w-24 h-24 object-cover rounded" />
+          <div>
+            <div id="look-preview-text" class="text-sm font-medium">Seleccioná las piezas para ver el preview</div>
+            <div id="look-preview-price" class="text-xs text-gray-500">—</div>
+          </div>
+        </div>
+
+        <div class="ml-auto flex gap-2">
+          <button id="save-look" class="bg-brandBeige hover:bg-brandSoftPink px-4 py-2 rounded-full font-medium focus-ring">Guardar</button>
+          <button id="share-look" class="bg-green-600 text-white px-4 py-2 rounded-full font-medium hover:bg-green-700 focus-ring">Compartir por WhatsApp</button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h4 class="text-sm font-semibold mb-2">Looks guardados</h4>
+        <div id="saved-looks" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Confianza -->
   <section id="confianza" class="border-t border-brandBeige bg-brandBeige/20 py-8 px-4">
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-sm">
@@ -114,8 +187,20 @@
 
   <!-- Footer -->
   <footer class="bg-brandText text-white py-6 text-center text-xs">
-    <p>© 2026 Zen Mujer | Zen Hombre. Todos los derechos reservados.</p>
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+      <p>© 2026 Zen Mujer | Zen Hombre. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-3">
+        <a href="https://www.facebook.com/zenmujer" target="_blank" rel="noopener" class="text-white hover:opacity-90 text-sm">Facebook</a>
+        <a href="https://www.instagram.com/zenmujer" target="_blank" rel="noopener" class="text-white hover:opacity-90 text-sm">Instagram</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- Floating social bar -->
+  <div class="social-fixed">
+    <a href="https://www.facebook.com/zenmujer" target="_blank" rel="noopener" aria-label="Facebook Zen Mujer"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/zenmujer" target="_blank" rel="noopener" aria-label="Instagram zenmujer"><i class="fa-brands fa-instagram"></i></a>
+  </div>
 
   <!-- Cart modal -->
   <div id="cart-modal" class="fixed inset-0 bg-black/40 z-50 hidden flex justify-end">
@@ -143,13 +228,15 @@
     </div>
   </div>
 
+  <!-- Toast container -->
+  <div id="toast-area"></div>
+
   <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
 
   <!-- Lógica JS -->
   <script>
-    // Número de WhatsApp: si necesitás cambiarlo, editá PHONE_NUMBER_PREFIX y PHONE_NUMBER (sin +).
-    // He asumido: Argentina móvil -> 5492235700480 (54 país, 9 móvil, luego sin 0 inicial).
+    // Número de WhatsApp: por defecto
     const PHONE_NUMBER = "5492235700480";
 
     // Productos con tus imágenes (precios inventados)
@@ -183,20 +270,22 @@
       const grid = $("product-grid");
       grid.innerHTML = items.map(p => `
         <article class="product-card bg-white rounded-2xl overflow-hidden border border-brandBeige shadow-sm hover:shadow-md transition-shadow flex flex-col" aria-labelledby="p-${p.id}-name">
-          <img loading="lazy" src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover">
+          <img loading="lazy" src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover" id="img-${p.id}">
           <div class="p-4 flex flex-col flex-grow">
             <span class="text-xs uppercase text-brandAccentPink font-bold mb-1">${p.category === 'mujer' ? 'Zen Mujer' : 'Zen Hombre'}</span>
             <h3 id="p-${p.id}-name" class="font-medium text-brandText text-base mb-2">${p.name}</h3>
             <p class="text-sm text-gray-500 mb-3">Diseño cómodo y atemporal.</p>
             <div class="mt-auto flex justify-between items-center pt-2">
               <span class="font-semibold text-brandText">$${p.price.toLocaleString()}</span>
-              <button onclick="addToCart(${p.id})" class="bg-brandBeige hover:bg-brandSoftPink text-brandText text-xs px-3 py-2 rounded-full font-medium transition-colors focus-ring" aria-label="Agregar ${p.name} al carrito">
+              <button onclick="addToCart(${p.id}, this)" class="bg-brandBeige hover:bg-brandSoftPink text-brandText text-xs px-3 py-2 rounded-full font-medium transition-colors focus-ring" aria-label="Agregar ${p.name} al carrito">
                 + Agregar
               </button>
             </div>
           </div>
         </article>
       `).join('');
+
+      populateMixAndMatchOptions();
     }
 
     function filterProducts(category) {
@@ -205,7 +294,7 @@
     }
 
     // Carrito
-    function addToCart(productId) {
+    function addToCart(productId, btnEl) {
       const product = products.find(p => p.id === productId);
       if(!product) return;
       const item = cart.find(i => i.id === productId);
@@ -213,6 +302,13 @@
       else cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
       saveCart();
       updateCartUI();
+
+      try {
+        const img = document.getElementById('img-' + productId);
+        if (img) flyToCart(img, btnEl);
+      } catch(e){}
+
+      showToast(`Agregado: ${product.name}`);
     }
 
     function changeQuantity(id, delta) {
@@ -229,60 +325,4 @@
       const cartCount = $("cart-count");
       const cartTotal = $("cart-total");
 
-      const totalCount = cart.reduce((acc, i) => acc + i.quantity, 0);
-      const totalPrice = cart.reduce((acc, i) => acc + i.price * i.quantity, 0);
-
-      cartCount.innerText = totalCount;
-      cartTotal.innerText = `$${totalPrice.toLocaleString()}`;
-
-      if (cart.length === 0) {
-        cartItems.innerHTML = `<p class="text-center text-gray-400 text-sm my-auto">El carrito está vacío.</p>`;
-        return;
-      }
-
-      cartItems.innerHTML = cart.map(item => `
-        <div class="flex items-center justify-between border-b pb-3">
-          <div>
-            <h4 class="text-sm font-medium text-brandText">${item.name}</h4>
-            <p class="text-xs text-gray-500">$${item.price.toLocaleString()} x ${item.quantity}</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 bg-brandBeige rounded flex items-center justify-center text-xs font-bold focus-ring">-</button>
-            <span class="text-xs">${item.quantity}</span>
-            <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 bg-brandBeige rounded flex items-center justify-center text-xs font-bold focus-ring">+</button>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function toggleCart() {
-      $("cart-modal").classList.toggle('hidden');
-    }
-
-    // Enviar por WhatsApp
-    function sendToWhatsApp() {
-      if (cart.length === 0) {
-        alert("Agrega al menos un producto al carrito para realizar el pedido.");
-        return;
-      }
-      let message = "¡Hola! Quisiera realizar el siguiente pedido desde la web:%0A%0A";
-      cart.forEach(item => {
-        message += `• ${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toLocaleString()}%0A`;
-      });
-      const total = cart.reduce((acc, it) => acc + it.price * it.quantity, 0);
-      message += `%0A*Total estimado:* $${total.toLocaleString()}%0A%0A¿Tienen disponibilidad de stock?`;
-      // Abrir WA
-      const url = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
-      window.open(url, '_blank');
-    }
-
-    // Eventos
-    document.getElementById('whatsapp-checkout').addEventListener('click', sendToWhatsApp);
-
-    // Inicialización
-    loadCart();
-    renderProducts(products);
-    updateCartUI();
-  </script>
-</body>
-</html>
+    
