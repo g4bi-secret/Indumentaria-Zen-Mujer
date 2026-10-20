@@ -1,288 +1,674 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zen Mujer | Zen Hombre — Catálogo</title>
-  <meta name="description" content="Catálogo Zen Mujer | Zen Hombre — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
-  <!-- Open Graph simple -->
-  <meta property="og:title" content="Zen Mujer | Zen Hombre" />
-  <meta property="og:description" content="Catálogo Zen — prendas cómodas y atemporales. Envíos y atención por WhatsApp." />
-  <meta property="og:image" content="https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" />
-  <meta property="og:type" content="website" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zen Mujer — indumentaria femenina, urbana y contemporánea. Descubrí colecciones premium para el día a día."
+    />
+    <title>Zen Mujer | Indumentaria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sand: '#E7D7B5',
+              cream: '#F7F2EA',
+              stone: '#EFE7DF',
+              moss: '#7A8F7B',
+              cocoa: '#2A211C',
+              mocha: '#1B1715',
+              latte: '#D8B98B',
+              bronze: '#B8895B',
+              rose: '#D9A7A7',
+              panel: '#181513',
+              panelAlt: '#231D1B',
+              soft: '#F3EBDC',
+              ink: '#120F0E',
+            },
+            boxShadow: {
+              glow: '0 10px 35px rgba(184, 137, 91, 0.23)',
+              luxe: '0 24px 60px rgba(0, 0, 0, 0.34)',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brandWhite: '#FFFFFF',
-            brandSoftPink: '#FCE7F0',
-            brandBeige: '#F5EBE6',
-            brandAccentPink: '#E8A5C2',
-            brandText: '#4A3E3D'
-          }
-        }
+      :root {
+        --bg: #120f0e;
+        --bg-soft: #1b1715;
+        --panel: #191513;
+        --panel-alt: #211b19;
+        --cream: #f7f2ea;
+        --sand: #e7d7b5;
+        --latte: #d8b98b;
+        --bronze: #b8895b;
+        --moss: #7a8f7b;
+        --rose: #d9a7a7;
+        --line: rgba(255,255,255,0.08);
       }
-    }
-  </script>
 
-  <style>
-    /* Pequeñas mejoras de accesibilidad y transición */
-    :root { color-scheme: light; }
-    .focus-ring:focus { outline: 3px solid rgba(232,165,194,0.25); outline-offset: 2px; }
-    .product-card img { transition: transform .25s ease; }
-    .product-card:hover img { transform: scale(1.02); }
-  </style>
-</head>
-<body class="bg-brandWhite text-brandText font-sans antialiased flex flex-col min-h-screen">
+      html {
+        scroll-behavior: smooth;
+      }
 
-  <!-- Top banner -->
-  <div class="bg-brandSoftPink text-brandText text-center py-2 text-xs md:text-sm font-medium tracking-wide">
-    ✨ Encuentra tu armonía y estilo. Envíos locales y atención personalizada por WhatsApp ✨
-  </div>
+      body {
+        font-family: 'Inter', sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(216, 185, 139, 0.1), transparent 25%),
+          radial-gradient(circle at bottom right, rgba(122, 143, 123, 0.08), transparent 20%),
+          var(--bg);
+        color: var(--cream);
+      }
 
-  <!-- Header -->
-  <header class="sticky top-0 bg-white/90 backdrop-blur-md z-40 border-b border-brandBeige">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <div class="text-xl md:text-2xl font-light tracking-widest text-brandText uppercase">
-          Zen <span class="text-brandAccentPink font-normal">Mujer</span> | Zen <span class="text-brandAccentPink font-normal">Hombre</span>
-        </div>
-        <nav class="hidden md:flex gap-4 text-sm text-gray-600">
-          <a href="#catalogo" class="hover:text-brandText">Catálogo</a>
-          <a href="#confianza" class="hover:text-brandText">Envíos</a>
+      .font-display {
+        font-family: 'Cormorant Garamond', serif;
+      }
+
+      .hero-blob {
+        background: radial-gradient(circle at center, rgba(216, 185, 139, 0.18), transparent 62%);
+      }
+
+      .soft-panel {
+        background: linear-gradient(180deg, rgba(25, 21, 19, 0.9), rgba(18, 15, 14, 0.95));
+        border: 1px solid var(--line);
+        backdrop-filter: blur(12px);
+      }
+
+      .gold-linear {
+        background: linear-gradient(135deg, #d8b98b 0%, #e7d7b5 45%, #f5e9d3 100%);
+      }
+
+      .rose-linear {
+        background: linear-gradient(135deg, rgba(217,167,167,0.22), rgba(216,185,139,0.08));
+      }
+
+      .card-hover {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 26px 46px rgba(0, 0, 0, 0.28);
+        border-color: rgba(216, 185, 139, 0.35);
+      }
+
+      .product-image {
+        height: 340px;
+        object-fit: cover;
+      }
+
+      .scrollbar-thin::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: rgba(216, 185, 139, 0.45);
+        border-radius: 999px;
+      }
+
+      .ring-soft {
+        box-shadow: 0 0 0 1px rgba(216, 185, 139, 0.2), 0 0 24px rgba(216, 185, 139, 0.1);
+      }
+
+      .grain {
+        background-image: linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015));
+      }
+    </style>
+  </head>
+  <body class="grain">
+    <div class="border-b border-white/10 bg-[#151210]">
+      <div class="mx-auto max-w-7xl px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-cream/75 sm:text-xs">
+        Cuida tu estilo • Encuentra tu esencia • Compra con confianza
+      </div>
+    </div>
+
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-[#120f0e]/80 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#top" class="flex items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-full border border-sand/50 bg-[#201b19] text-sm font-black tracking-[0.18em] text-sand shadow-glow">
+            Z
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.34em] text-sand/80">Zen</p>
+            <h1 class="font-display text-xl leading-none text-cream">Mujer</h1>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-7 text-sm text-cream/75 md:flex">
+          <a href="#catalog" class="transition hover:text-sand">Catálogo</a>
+          <a href="#story" class="transition hover:text-sand">Nuestra historia</a>
+          <a href="#reviews" class="transition hover:text-sand">Reseñas</a>
+          <a href="#contact" class="transition hover:text-sand">Contacto</a>
         </nav>
-      </div>
 
-      <div class="flex items-center gap-3">
-        <button aria-label="Abrir carrito" onclick="toggleCart()" class="relative bg-brandBeige p-2.5 rounded-full hover:bg-brandSoftPink focus-ring">
-          <i class="fa-solid fa-bag-shopping text-brandText text-lg"></i>
-          <span id="cart-count" class="absolute -top-1 -right-1 bg-brandAccentPink text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        <button
+          id="cartButton"
+          class="relative inline-flex items-center gap-3 rounded-full border border-sand/40 bg-[#1c1817] px-4 py-2.5 text-sm font-medium text-cream transition hover:border-sand hover:bg-[#241f1d]"
+          aria-label="Abrir carrito"
+        >
+          <span class="text-lg">🛍️</span>
+          <span>Carrito</span>
+          <span id="cartCount" class="flex h-6 min-w-6 items-center justify-center rounded-full bg-sand px-1.5 text-[11px] font-black text-[#121212]">0</span>
         </button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero -->
-  <section class="bg-brandBeige/40 py-12 md:py-16 text-center px-4 mb-8">
-    <div class="max-w-2xl mx-auto">
-      <span class="text-xs uppercase tracking-widest text-brandAccentPink font-bold">Colección Balance</span>
-      <h2 class="text-3xl md:text-4xl font-light my-3 text-brandText">Siente la comodidad en cada prenda</h2>
-      <p class="text-sm md:text-base text-gray-600 mb-6">Diseños pensados para tu bienestar diario. Telas suaves, tonos neutros y estilo atemporal.</p>
-      <a href="#catalogo" class="inline-block bg-brandAccentPink text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity shadow-sm">
-        Explorar Catálogo
-      </a>
-    </div>
-  </section>
+    <main id="top">
+      <section class="relative overflow-hidden">
+        <div class="hero-blob absolute inset-0"></div>
+        <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
+          <div>
+            <span class="inline-flex items-center rounded-full border border-sand/40 bg-sand/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-sand">
+              estilo consciente • para vivir mejor
+            </span>
+            <h2 class="mt-6 max-w-xl font-display text-5xl leading-[0.9] text-cream sm:text-6xl lg:text-7xl">
+              Ropa que acompaña tu ritmo.
+            </h2>
+            <p class="mt-5 max-w-xl text-base leading-8 text-cream/72 sm:text-lg">
+              En Zen Mujer combinamos comodidad, calidez y diseño moderno para crear looks cotidianos con identidad propia. Prendas pensadas para moverse con libertad, sentirse bien y verse impecables.
+            </p>
 
-  <!-- Catalogo -->
-  <main id="catalogo" class="max-w-6xl mx-auto px-4 flex-grow w-full mb-16">
-    <div class="flex justify-center gap-2 md:gap-4 mb-8">
-      <button onclick="filterProducts('all')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-brandBeige bg-brandBeige text-brandText">Todos</button>
-      <button onclick="filterProducts('mujer')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-brandBeige text-gray-600 hover:bg-brandSoftPink">Zen Mujer</button>
-      <button onclick="filterProducts('hombre')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-brandBeige text-gray-600 hover:bg-brandSoftPink">Zen Hombre</button>
-    </div>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href="#catalog" class="inline-flex items-center justify-center rounded-full gold-linear px-6 py-3 text-sm font-black text-[#17120f] shadow-glow transition hover:scale-[1.02]">
+                Ver colección
+              </a>
+              <a href="https://wa.me/5493518631873?text=Hola%20Zen%20Mujer%2C%20quiero%20consultar%20por%20la%20colecci%C3%B3n%20de%20ropa%20femenina." target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-cream transition hover:border-sand/50 hover:bg-white/10">
+                Consultar por WhatsApp
+              </a>
+            </div>
 
-    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Productos renderizados por JS -->
-    </div>
-  </main>
-
-  <!-- Confianza -->
-  <section id="confianza" class="border-t border-brandBeige bg-brandBeige/20 py-8 px-4">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-sm">
-      <div class="p-4">
-        <i class="fa-solid fa-truck-fast text-brandAccentPink text-2xl mb-2"></i>
-        <h4 class="font-semibold mb-1">Entregas Ágiles</h4>
-        <p class="text-xs text-gray-500">Coordinamos el envío directo a tu puerta.</p>
-      </div>
-      <div class="p-4">
-        <i class="fa-solid fa-comments text-brandAccentPink text-2xl mb-2"></i>
-        <h4 class="font-semibold mb-1">Asesoría Personalizada</h4>
-        <p class="text-xs text-gray-500">Te ayudamos a elegir tu talle ideal por WhatsApp.</p>
-      </div>
-      <div class="p-4">
-        <i class="fa-solid fa-shield-heart text-brandAccentPink text-2xl mb-2"></i>
-        <h4 class="font-semibold mb-1">Calidad Garantizada</h4>
-        <p class="text-xs text-gray-500">Prendas suaves y duraderas para tu día a día.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-brandText text-white py-6 text-center text-xs">
-    <p>© 2026 Zen Mujer | Zen Hombre. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Cart modal -->
-  <div id="cart-modal" class="fixed inset-0 bg-black/40 z-50 hidden flex justify-end">
-    <div class="bg-white w-full max-w-md h-full p-6 flex flex-col shadow-xl">
-      <div class="flex justify-between items-center border-b pb-4">
-        <h3 class="text-lg font-medium text-brandText">Tu Carrito Zen</h3>
-        <button onclick="toggleCart()" class="text-gray-400 hover:text-brandText focus-ring" aria-label="Cerrar carrito">
-          <i class="fa-solid fa-xmark text-xl"></i>
-        </button>
-      </div>
-
-      <div id="cart-items" class="flex-grow overflow-y-auto py-4 space-y-4">
-        <!-- JS -->
-      </div>
-
-      <div class="border-t pt-4 space-y-3">
-        <div class="flex justify-between font-semibold text-brandText text-lg">
-          <span>Total estimado:</span>
-          <span id="cart-total">$0</span>
-        </div>
-        <button id="whatsapp-checkout" class="w-full bg-green-600 text-white py-3 rounded-full font-medium hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Pedido por WhatsApp
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Font Awesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
-
-  <!-- Lógica JS -->
-  <script>
-    // Número de WhatsApp: si necesitás cambiarlo, editá PHONE_NUMBER_PREFIX y PHONE_NUMBER (sin +).
-    // He asumido: Argentina móvil -> 5492235700480 (54 país, 9 móvil, luego sin 0 inicial).
-    const PHONE_NUMBER = "5492235700480";
-
-    // Productos con tus imágenes (precios inventados)
-    const products = [
-      { id: 1, name: "Top Floral Rosa", category: "mujer", price: 16800, img: "https://i.ibb.co/zhBHpCbr/605116791-18353029984165033-3850391844625846729-n.jpg" },
-      { id: 2, name: "Vestido Relax Beige", category: "mujer", price: 22500, img: "https://i.ibb.co/GffGLkSp/604421852-18353029993165033-2567428724406563331-n.jpg" },
-      { id: 3, name: "Buzo Oversize Gris", category: "mujer", price: 29900, img: "https://i.ibb.co/ksXDFMZw/605877038-18353030002165033-4756567020471813223-n.jpg" },
-      { id: 4, name: "Remera Básica Zen", category: "hombre", price: 15900, img: "https://i.ibb.co/TxsnTqSC/604853587-18353030011165033-8027889818754600951-n.jpg" },
-      { id: 5, name: "Pantalón Jogger Relax", category: "hombre", price: 24300, img: "https://i.ibb.co/mV9pnnQY/605464482-18353030029165033-2234114027883973075-n.jpg" },
-      { id: 6, name: "Camisa Lino Natural", category: "hombre", price: 19900, img: "https://i.ibb.co/7xc8pLMj/604471305-18353030020165033-7063406124973929134-n.jpg" }
-    ];
-
-    // Carrito persistente
-    let cart = [];
-
-    // Utils
-    const $ = id => document.getElementById(id);
-
-    function saveCart() {
-      localStorage.setItem('zen_cart_v1', JSON.stringify(cart));
-    }
-    function loadCart() {
-      try {
-        const raw = localStorage.getItem('zen_cart_v1');
-        cart = raw ? JSON.parse(raw) : [];
-      } catch(e) { cart = []; }
-    }
-
-    // Render productos
-    function renderProducts(items) {
-      const grid = $("product-grid");
-      grid.innerHTML = items.map(p => `
-        <article class="product-card bg-white rounded-2xl overflow-hidden border border-brandBeige shadow-sm hover:shadow-md transition-shadow flex flex-col" aria-labelledby="p-${p.id}-name">
-          <img loading="lazy" src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover">
-          <div class="p-4 flex flex-col flex-grow">
-            <span class="text-xs uppercase text-brandAccentPink font-bold mb-1">${p.category === 'mujer' ? 'Zen Mujer' : 'Zen Hombre'}</span>
-            <h3 id="p-${p.id}-name" class="font-medium text-brandText text-base mb-2">${p.name}</h3>
-            <p class="text-sm text-gray-500 mb-3">Diseño cómodo y atemporal.</p>
-            <div class="mt-auto flex justify-between items-center pt-2">
-              <span class="font-semibold text-brandText">$${p.price.toLocaleString()}</span>
-              <button onclick="addToCart(${p.id})" class="bg-brandBeige hover:bg-brandSoftPink text-brandText text-xs px-3 py-2 rounded-full font-medium transition-colors focus-ring" aria-label="Agregar ${p.name} al carrito">
-                + Agregar
-              </button>
+            <div class="mt-10 flex flex-wrap gap-6 text-sm text-cream/70">
+              <div>
+                <p class="font-display text-3xl text-sand">+1k</p>
+                <p>clientes felices</p>
+              </div>
+              <div>
+                <p class="font-display text-3xl text-sand">4.9/5</p>
+                <p>valoración media</p>
+              </div>
+              <div>
+                <p class="font-display text-3xl text-sand">24h</p>
+                <p>respuesta rápida</p>
+              </div>
             </div>
           </div>
-        </article>
-      `).join('');
-    }
 
-    function filterProducts(category) {
-      if (category === 'all') renderProducts(products);
-      else renderProducts(products.filter(p => p.category === category));
-    }
+          <div class="relative">
+            <div class="absolute -left-10 top-12 h-32 w-32 rounded-full bg-sand/20 blur-3xl"></div>
+            <div class="absolute -right-8 bottom-8 h-36 w-36 rounded-full bg-rose/20 blur-3xl"></div>
 
-    // Carrito
-    function addToCart(productId) {
-      const product = products.find(p => p.id === productId);
-      if(!product) return;
-      const item = cart.find(i => i.id === productId);
-      if (item) item.quantity++;
-      else cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
-      saveCart();
-      updateCartUI();
-    }
-
-    function changeQuantity(id, delta) {
-      const it = cart.find(i => i.id === id);
-      if (!it) return;
-      it.quantity += delta;
-      if (it.quantity <= 0) cart = cart.filter(x => x.id !== id);
-      saveCart();
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      const cartItems = $("cart-items");
-      const cartCount = $("cart-count");
-      const cartTotal = $("cart-total");
-
-      const totalCount = cart.reduce((acc, i) => acc + i.quantity, 0);
-      const totalPrice = cart.reduce((acc, i) => acc + i.price * i.quantity, 0);
-
-      cartCount.innerText = totalCount;
-      cartTotal.innerText = `$${totalPrice.toLocaleString()}`;
-
-      if (cart.length === 0) {
-        cartItems.innerHTML = `<p class="text-center text-gray-400 text-sm my-auto">El carrito está vacío.</p>`;
-        return;
-      }
-
-      cartItems.innerHTML = cart.map(item => `
-        <div class="flex items-center justify-between border-b pb-3">
-          <div>
-            <h4 class="text-sm font-medium text-brandText">${item.name}</h4>
-            <p class="text-xs text-gray-500">$${item.price.toLocaleString()} x ${item.quantity}</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 bg-brandBeige rounded flex items-center justify-center text-xs font-bold focus-ring">-</button>
-            <span class="text-xs">${item.quantity}</span>
-            <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 bg-brandBeige rounded flex items-center justify-center text-xs font-bold focus-ring">+</button>
+            <div class="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#1a1716] p-3 shadow-luxe">
+              <div class="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
+                <div class="overflow-hidden rounded-[22px] border border-white/10">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Modelo Zen Mujer" class="h-[480px] w-full object-cover" />
+                </div>
+                <div class="grid gap-3">
+                  <div class="overflow-hidden rounded-[22px] border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Detalle de moda" class="h-[232px] w-full object-cover" />
+                  </div>
+                  <div class="rose-linear overflow-hidden rounded-[22px] border border-sand/20 p-4">
+                    <div class="flex items-center justify-between">
+                      <p class="text-[10px] uppercase tracking-[0.25em] text-sand">edición</p>
+                      <span class="rounded-full border border-sand/40 bg-[#201b19]/70 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sand">Fresh</span>
+                    </div>
+                    <h3 class="mt-5 font-display text-4xl leading-none text-cream">Spring</h3>
+                    <p class="mt-3 text-sm leading-6 text-cream/80">Looks suaves, transpirables y elegantes para cada día.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      `).join('');
-    }
+      </section>
 
-    function toggleCart() {
-      $("cart-modal").classList.toggle('hidden');
-    }
+      <section id="catalog" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Catálogo</p>
+            <h3 class="mt-2 font-display text-4xl text-cream sm:text-5xl">Descubrí tu mejor look</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn rounded-full border border-sand/40 bg-sand px-4 py-2 text-sm font-semibold text-[#111111] shadow-glow transition" data-category="Todos">Todos</button>
+            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-cream/80 transition hover:border-sand/30 hover:text-cream" data-category="Jóvenes">Jóvenes</button>
+            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-cream/80 transition hover:border-sand/30 hover:text-cream" data-category="Niños">Niños</button>
+            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-cream/80 transition hover:border-sand/30 hover:text-cream" data-category="Accesorios/Otras Prendas">Accesorios</button>
+          </div>
+        </div>
 
-    // Enviar por WhatsApp
-    function sendToWhatsApp() {
-      if (cart.length === 0) {
-        alert("Agrega al menos un producto al carrito para realizar el pedido.");
-        return;
+        <div id="productGrid" class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"></div>
+      </section>
+
+      <section id="story" class="bg-[#171312] py-16">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+          <div class="overflow-hidden rounded-[28px] border border-white/10 bg-[#1d1716] shadow-luxe">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Historia de la marca" class="h-full min-h-[360px] w-full object-cover" />
+          </div>
+
+          <div class="flex flex-col justify-center">
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Nuestra historia</p>
+            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Minimalismo, comodidad y autenticidad.</h3>
+            <p class="mt-5 text-base leading-8 text-cream/72">
+              Nacimos para ofrecer una alternativa más cálida y consciente en la indumentaria diaria. Pensamos cada pieza para acompañar el movimiento real de la mujer moderna: trabajo, calle, encuentros, momentos esenciales.
+            </p>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/10 bg-[#1f1b1a] p-4 ring-soft">
+                <p class="font-display text-4xl text-sand">100%</p>
+                <p class="mt-2 text-sm text-cream/70">Texturas suaves y de alta calidad</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-[#1f1b1a] p-4 ring-soft">
+                <p class="font-display text-4xl text-sand">24h</p>
+                <p class="mt-2 text-sm text-cream/70">Respuesta ágil por WhatsApp</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-[#1f1b1a] p-4 ring-soft">
+                <p class="font-display text-4xl text-sand">+1k</p>
+                <p class="mt-2 text-sm text-cream/70">compras con estilo y confianza</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Beneficios</p>
+          <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Lo que hace especial a Zen Mujer</h3>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="soft-panel rounded-[26px] p-6 card-hover shadow-luxe">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-sand/30 bg-sand/10 text-xl">✦</div>
+            <h4 class="text-xl font-semibold text-cream">Diseño pensado para vos</h4>
+            <p class="mt-3 text-base leading-7 text-cream/70">Colecciones modernas, fluidas y con detalles que marcan la diferencia.</p>
+          </article>
+
+          <article class="soft-panel rounded-[26px] p-6 card-hover shadow-luxe">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-sand/30 bg-sand/10 text-xl">☼</div>
+            <h4 class="text-xl font-semibold text-cream">Comodidad real</h4>
+            <p class="mt-3 text-base leading-7 text-cream/70">Materiales suaves, transpirables y durables para usar todos los días.</p>
+          </article>
+
+          <article class="soft-panel rounded-[26px] p-6 card-hover shadow-luxe">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-sand/30 bg-sand/10 text-xl">♡</div>
+            <h4 class="text-xl font-semibold text-cream">Atención cercana</h4>
+            <p class="mt-3 text-base leading-7 text-cream/70">Te acompañamos por WhatsApp para armar looks, talles y entregas sin complicaciones.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="reviews" class="bg-[#171312] py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-10 text-center">
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Reseñas</p>
+            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Lo que dicen nuestras clientas</h3>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="rounded-[26px] border border-white/10 bg-[#1d1716] p-6 card-hover shadow-luxe">
+              <div class="mb-4 flex text-sand">★★★★★</div>
+              <p class="text-base leading-7 text-cream/75">
+                “La calidad es excelente y el estilo me encantó. Compré un conjunto para salir y lo usé varias veces porque es súper cómodo.”
+              </p>
+              <div class="mt-6 border-t border-white/10 pt-4">
+                <p class="font-semibold text-cream">María L.</p>
+                <p class="text-sm text-cream/55">Cliente de la colección</p>
+              </div>
+            </article>
+
+            <article class="rounded-[26px] border border-white/10 bg-[#1d1716] p-6 card-hover shadow-luxe">
+              <div class="mb-4 flex text-sand">★★★★★</div>
+              <p class="text-base leading-7 text-cream/75">
+                “Pedí por WhatsApp y todo fue muy simple. La atención fue rápida, amable y me ayudaron a elegir la mejor opción.”
+              </p>
+              <div class="mt-6 border-t border-white/10 pt-4">
+                <p class="font-semibold text-cream">Sofía R.</p>
+                <p class="text-sm text-cream/55">Cliente premium</p>
+              </div>
+            </article>
+
+            <article class="rounded-[26px] border border-white/10 bg-[#1d1716] p-6 card-hover shadow-luxe">
+              <div class="mb-4 flex text-sand">★★★★★</div>
+              <p class="text-base leading-7 text-cream/75">
+                “El local tiene una vibra muy linda y las prendas tienen ese equilibrio justo entre casual y elegante. Me encantó.”
+              </p>
+              <div class="mt-6 border-t border-white/10 pt-4">
+                <p class="font-semibold text-cream">Lucía M.</p>
+                <p class="text-sm text-cream/55">Cliente de barrio</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div class="rounded-[28px] border border-white/10 bg-[#171312] p-6 sm:p-8 shadow-luxe">
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Contacto</p>
+            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Te esperamos en el local</h3>
+            <div class="mt-6 space-y-5 text-cream/75">
+              <div>
+                <p class="text-sm uppercase tracking-[0.22em] text-sand/80">Horarios</p>
+                <p class="mt-2 text-base">Lunes a Sábados de 17:00 a 21:00 hs.</p>
+              </div>
+              <div>
+                <p class="text-sm uppercase tracking-[0.22em] text-sand/80">Dirección</p>
+                <p class="mt-2 text-base">Av. Alfonsina Storni 717-701, X5019 Córdoba.</p>
+              </div>
+              <div>
+                <p class="text-sm uppercase tracking-[0.22em] text-sand/80">WhatsApp</p>
+                <p class="mt-2 text-base">+54 9 351 863-1873</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-[28px] border border-white/10 bg-[#171312] p-6 sm:p-8 shadow-luxe">
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Redes</p>
+            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Seguinos</h3>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <a href="https://instagram.com/naturaleza_ropa" target="_blank" rel="noreferrer" class="rounded-2xl border border-white/10 bg-[#201b1a] p-4 transition hover:border-sand/40 hover:bg-[#261f1d]">
+                <p class="text-sm uppercase tracking-[0.2em] text-sand">Instagram</p>
+                <p class="mt-2 text-lg font-semibold text-cream">@naturaleza_ropa</p>
+              </a>
+              <a href="https://facebook.com/Naturaleza-ropa-inf" target="_blank" rel="noreferrer" class="rounded-2xl border border-white/10 bg-[#201b1a] p-4 transition hover:border-sand/40 hover:bg-[#261f1d]">
+                <p class="text-sm uppercase tracking-[0.2em] text-sand">Facebook</p>
+                <p class="mt-2 text-lg font-semibold text-cream">Naturaleza ropa inf</p>
+              </a>
+            </div>
+            <div class="mt-8 rounded-2xl border border-sand/30 bg-sand/10 p-4">
+              <p class="text-sm uppercase tracking-[0.2em] text-sand">Tip de compra</p>
+              <p class="mt-2 text-base leading-7 text-cream/80">Consultá por WhatsApp para combinar looks, talles y disponibilidad antes de retirar o enviar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 bg-[#0f0d0c] py-6">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-cream/60 sm:flex-row sm:px-6 lg:px-8">
+        <p>© 2025 Zen Mujer | Estilo para vivir con calma.</p>
+        <p>Diseños elegantes, cómodos y auténticos.</p>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/5493518631873?text=Hola%20Zen%20Mujer%2C%20quiero%20consultar%20una%20prenda%20o%20armar%20un%20look."
+      target="_blank"
+      rel="noreferrer"
+      class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl shadow-2xl shadow-green-500/25 transition hover:scale-105"
+      aria-label="Chatear por WhatsApp"
+    >
+      💬
+    </a>
+
+    <div id="cartModal" class="fixed inset-0 z-50 hidden bg-black/70 p-4 backdrop-blur-sm">
+      <div class="mx-auto flex h-full max-w-2xl items-center justify-center">
+        <div class="w-full rounded-[28px] border border-white/10 bg-[#171312] shadow-2xl shadow-black/40">
+          <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
+            <h3 class="text-xl font-black text-cream">Tu carrito</h3>
+            <button id="closeCart" class="text-2xl text-cream/70 transition hover:text-sand">×</button>
+          </div>
+
+          <div class="max-h-[55vh] overflow-y-auto px-5 py-4 scrollbar-thin">
+            <div id="cartItems" class="space-y-3"></div>
+          </div>
+
+          <div class="border-t border-white/10 px-5 py-5">
+            <div class="mb-4 flex items-center justify-between text-cream/80">
+              <span class="text-sm uppercase tracking-[0.14em]">Total</span>
+              <span id="totalPrice" class="text-2xl font-black text-sand">$0</span>
+            </div>
+
+            <div class="space-y-3">
+              <label class="block">
+                <span class="mb-1.5 block text-sm text-cream/70">Nombre del cliente</span>
+                <input id="customerName" type="text" placeholder="Ej: María López" class="w-full rounded-xl border border-white/10 bg-[#1d1716] px-3 py-3 text-cream outline-none transition focus:border-sand/50" />
+              </label>
+
+              <label class="block">
+                <span class="mb-1.5 block text-sm text-cream/70">Método de entrega</span>
+                <select id="shippingMethod" class="w-full rounded-xl border border-white/10 bg-[#1d1716] px-3 py-3 text-cream outline-none transition focus:border-sand/50">
+                  <option value="Retiro en local (Av. Alfonsina Storni 717)">Retiro en local (Av. Alfonsina Storni 717)</option>
+                  <option value="Envío a domicilio">Envío a domicilio</option>
+                </select>
+              </label>
+            </div>
+
+            <button id="checkoutButton" class="mt-5 w-full rounded-full gold-linear px-5 py-3 text-sm font-black text-[#121212] transition hover:brightness-110">
+              Finalizar Pedido por WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const products = [
+        { id: 1, name: 'Conjunto Aura', category: 'Jóvenes', price: 24500, image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 2, name: 'Conjunto Celeste', category: 'Jóvenes', price: 26900, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 3, name: 'Set Nativa', category: 'Jóvenes', price: 28900, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 4, name: 'Blazer Modo', category: 'Jóvenes', price: 31900, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 5, name: 'Pijama Luna', category: 'Niños', price: 19900, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
+        { id: 6, name: 'Set Verano', category: 'Niños', price: 21900, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
+        { id: 7, name: 'Mochila Zen', category: 'Accesorios/Otras Prendas', price: 12900, image: 'https://images.unsplash.com/photo-1521369909026-2afed882baee?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
+        { id: 8, name: 'Gorra Solaris', category: 'Accesorios/Otras Prendas', price: 14900, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
+      ];
+
+      const state = {
+        activeCategory: 'Todos',
+        cart: [],
+      };
+
+      const productGrid = document.getElementById('productGrid');
+      const cartItems = document.getElementById('cartItems');
+      const cartModal = document.getElementById('cartModal');
+      const cartCount = document.getElementById('cartCount');
+      const totalPrice = document.getElementById('totalPrice');
+
+      function formatPrice(value) {
+        return new Intl.NumberFormat('es-AR', {
+          style: 'currency',
+          currency: 'ARS',
+          maximumFractionDigits: 0,
+        }).format(value);
       }
-      let message = "¡Hola! Quisiera realizar el siguiente pedido desde la web:%0A%0A";
-      cart.forEach(item => {
-        message += `• ${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toLocaleString()}%0A`;
+
+      function renderProducts() {
+        const filtered =
+          state.activeCategory === 'Todos'
+            ? products
+            : products.filter((product) => product.category === state.activeCategory);
+
+        productGrid.innerHTML = filtered
+          .map(
+            (product) => `
+              <article class="group overflow-hidden rounded-[26px] border border-white/10 bg-[#1b1716] card-hover shadow-luxe">
+                <div class="relative overflow-hidden">
+                  <img src="${product.image}" alt="${product.name}" class="product-image w-full transition duration-500 group-hover:scale-105" />
+                  <span class="absolute left-3 top-3 rounded-full border border-sand/40 bg-[#1b1716]/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sand">
+                    ${product.tag}
+                  </span>
+                </div>
+                <div class="p-5">
+                  <h4 class="text-lg font-semibold text-cream">${product.name}</h4>
+                  <div class="mt-3 flex items-center justify-between gap-3">
+                    <span class="text-xl font-black text-sand">${formatPrice(product.price)}</span>
+                    <button data-add="${product.id}" class="add-to-cart rounded-full bg-sand px-4 py-2 text-sm font-semibold text-[#111111] transition hover:bg-[#e7ca7a]">
+                      + Agregar
+                    </button>
+                  </div>
+                </div>
+              </article>
+            `
+          )
+          .join('');
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+          button.addEventListener('click', () => {
+            addToCart(Number(button.dataset.add));
+          });
+        });
+      }
+
+      function addToCart(productId) {
+        const product = products.find((item) => item.id === productId);
+        if (!product) return;
+
+        const existing = state.cart.find((item) => item.id === productId);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          state.cart.push({ id: productId, quantity: 1 });
+        }
+
+        renderCart();
+        openCart();
+      }
+
+      function renderCart() {
+        if (!state.cart.length) {
+          cartItems.innerHTML = `
+            <div class="rounded-2xl border border-dashed border-white/15 bg-[#1d1716] p-6 text-center">
+              <p class="text-base text-cream/70">Tu carrito está vacío.</p>
+            </div>
+          `;
+          cartCount.textContent = '0';
+          totalPrice.textContent = '$0';
+          return;
+        }
+
+        const cartProducts = state.cart.map((item) => {
+          const product = products.find((p) => p.id === item.id);
+          return { ...product, quantity: item.quantity };
+        });
+
+        const total = cartProducts.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        cartCount.textContent = String(cartProducts.reduce((acc, item) => acc + item.quantity, 0));
+        totalPrice.textContent = formatPrice(total);
+
+        cartItems.innerHTML = cartProducts
+          .map(
+            (item) => `
+              <div class="cart-item-enter flex items-center gap-3 rounded-2xl border border-white/10 bg-[#1d1716] p-3">
+                <img src="${item.image}" alt="${item.name}" class="h-20 w-20 rounded-xl object-cover" />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold text-cream">${item.name}</p>
+                  <p class="mt-1 text-sm text-sand">${formatPrice(item.price)}</p>
+                </div>
+                <div class="flex items-center gap-2 rounded-full border border-white/10 bg-[#121111] px-2 py-1">
+                  <button data-action="decrement" data-id="${item.id}" class="qty-btn text-lg text-cream/70 transition hover:text-sand">−</button>
+                  <span class="min-w-[22px] text-center text-sm font-semibold text-cream">${item.quantity}</span>
+                  <button data-action="increment" data-id="${item.id}" class="qty-btn text-lg text-cream/70 transition hover:text-sand">+</button>
+                </div>
+                <button data-action="remove" data-id="${item.id}" class="ml-1 text-sm text-cream/50 transition hover:text-red-300">Eliminar</button>
+              </div>
+            `
+          )
+          .join('');
+
+        document.querySelectorAll('.qty-btn').forEach((button) => {
+          button.addEventListener('click', () => {
+            updateQuantity(Number(button.dataset.id), button.dataset.action === 'increment' ? 1 : -1);
+          });
+        });
+
+        document.querySelectorAll('[data-action="remove"]').forEach((button) => {
+          button.addEventListener('click', () => {
+            removeFromCart(Number(button.dataset.id));
+          });
+        });
+      }
+
+      function updateQuantity(productId, delta) {
+        const item = state.cart.find((product) => product.id === productId);
+        if (!item) return;
+
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          state.cart = state.cart.filter((product) => product.id !== productId);
+        }
+
+        renderCart();
+      }
+
+      function removeFromCart(productId) {
+        state.cart = state.cart.filter((product) => product.id !== productId);
+        renderCart();
+      }
+
+      function openCart() {
+        cartModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+
+      function closeCart() {
+        cartModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      document.querySelectorAll('.filter-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+          state.activeCategory = button.dataset.category;
+          document.querySelectorAll('.filter-btn').forEach((btn) => {
+            btn.classList.remove('bg-sand', 'text-[#111111]');
+            btn.classList.add('bg-white/5', 'text-cream/80', 'border-white/10');
+          });
+
+          button.classList.remove('bg-white/5', 'text-cream/80', 'border-white/10');
+          button.classList.add('bg-sand', 'text-[#111111]', 'border-sand/40');
+
+          renderProducts();
+        });
       });
-      const total = cart.reduce((acc, it) => acc + it.price * it.quantity, 0);
-      message += `%0A*Total estimado:* $${total.toLocaleString()}%0A%0A¿Tienen disponibilidad de stock?`;
-      // Abrir WA
-      const url = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
-      window.open(url, '_blank');
-    }
 
-    // Eventos
-    document.getElementById('whatsapp-checkout').addEventListener('click', sendToWhatsApp);
+      document.getElementById('cartButton').addEventListener('click', openCart);
+      document.getElementById('closeCart').addEventListener('click', closeCart);
+      cartModal.addEventListener('click', (event) => {
+        if (event.target === cartModal) closeCart();
+      });
 
-    // Inicialización
-    loadCart();
-    renderProducts(products);
-    updateCartUI();
-  </script>
-</body>
+      document.getElementById('checkoutButton').addEventListener('click', () => {
+        if (!state.cart.length) {
+          alert('Tu carrito está vacío. Agrega productos antes de finalizar.');
+          return;
+        }
+
+        const customerName = document.getElementById('customerName').value.trim();
+        const shippingMethod = document.getElementById('shippingMethod').value;
+
+        if (!customerName) {
+          alert('Ingresá el nombre del cliente para continuar.');
+          return;
+        }
+
+        const cartProducts = state.cart.map((item) => {
+          const product = products.find((p) => p.id === item.id);
+          return `- ${product.name} x${item.quantity} (${formatPrice(product.price * item.quantity)})`;
+        });
+
+        const total = state.cart.reduce((acc, item) => {
+          const product = products.find((p) => p.id === item.id);
+          return acc + product.price * item.quantity;
+        }, 0);
+
+        const message = `Hola Zen Mujer, quiero confirmar mi pedido.%0A%0A` +
+          `Cliente: ${customerName}%0A` +
+          `Método de entrega: ${shippingMethod}%0A%0A` +
+          `Productos:%0A${cartProducts.join('%0A')}%0A%0A` +
+          `Total: ${formatPrice(total)}%0A%0A` +
+          `¿Tienen disponibilidad para coordinar este pedido?`;
+
+        const waLink = `https://wa.me/5493518631873?text=${message}`;
+        window.open(waLink, '_blank');
+      });
+
+      renderProducts();
+      renderCart();
+    </script>
+  </body>
 </html>
