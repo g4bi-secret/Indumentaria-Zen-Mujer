@@ -5,52 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Zen Mujer — indumentaria femenina, urbana y contemporánea. Descubrí colecciones premium para el día a día."
+      content="Naturalez Indumentaria Informal — ropa casual, urbana y auténtica para jóvenes y niños."
     />
-    <title>Zen Mujer | Indumentaria</title>
+    <title>Naturalez Indumentaria Informal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              sand: '#E7D7B5',
-              cream: '#F7F2EA',
-              stone: '#EFE7DF',
-              moss: '#7A8F7B',
-              cocoa: '#2A211C',
-              mocha: '#1B1715',
-              latte: '#D8B98B',
-              bronze: '#B8895B',
-              rose: '#D9A7A7',
-              panel: '#181513',
-              panelAlt: '#231D1B',
-              soft: '#F3EBDC',
-              ink: '#120F0E',
+              ink: '#080808',
+              panel: '#111111',
+              panelAlt: '#171717',
+              stone: '#e8e2d8',
+              ivory: '#f5f1ea',
+              ash: '#a7a29d',
+              line: '#2d2d2d',
+              accent: '#d9d2c7',
+              warm: '#cbbca5',
             },
             boxShadow: {
-              glow: '0 10px 35px rgba(184, 137, 91, 0.23)',
-              luxe: '0 24px 60px rgba(0, 0, 0, 0.34)',
+              brutal: '10px 10px 0 rgba(255,255,255,0.08)',
+              hard: '10px 10px 0 rgba(0,0,0,0.25)',
             },
           },
         },
       };
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
       :root {
-        --bg: #120f0e;
-        --bg-soft: #1b1715;
-        --panel: #191513;
-        --panel-alt: #211b19;
-        --cream: #f7f2ea;
-        --sand: #e7d7b5;
-        --latte: #d8b98b;
-        --bronze: #b8895b;
-        --moss: #7a8f7b;
-        --rose: #d9a7a7;
-        --line: rgba(255,255,255,0.08);
+        --bg: #070707;
+        --panel: #111111;
+        --panel-alt: #181818;
+        --ink: #0c0c0c;
+        --ivory: #f5f1ea;
+        --stone: #e8e2d8;
+        --muted: #a7a29d;
+        --line: rgba(255,255,255,0.14);
+        --accent: #d9d2c7;
       }
 
       html {
@@ -59,43 +53,49 @@
 
       body {
         font-family: 'Inter', sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(216, 185, 139, 0.1), transparent 25%),
-          radial-gradient(circle at bottom right, rgba(122, 143, 123, 0.08), transparent 20%),
-          var(--bg);
-        color: var(--cream);
+        background: #070707;
+        color: var(--ivory);
       }
 
-      .font-display {
-        font-family: 'Cormorant Garamond', serif;
+      .font-brutal {
+        font-family: 'Archivo', sans-serif;
+        letter-spacing: -0.06em;
       }
 
-      .hero-blob {
-        background: radial-gradient(circle at center, rgba(216, 185, 139, 0.18), transparent 62%);
-      }
-
-      .soft-panel {
-        background: linear-gradient(180deg, rgba(25, 21, 19, 0.9), rgba(18, 15, 14, 0.95));
+      .outline-line {
         border: 1px solid var(--line);
-        backdrop-filter: blur(12px);
       }
 
-      .gold-linear {
-        background: linear-gradient(135deg, #d8b98b 0%, #e7d7b5 45%, #f5e9d3 100%);
+      .shadow-brutal {
+        box-shadow: 10px 10px 0 rgba(255,255,255,0.06);
       }
 
-      .rose-linear {
-        background: linear-gradient(135deg, rgba(217,167,167,0.22), rgba(216,185,139,0.08));
+      .bg-noise {
+        background-image:
+          linear-gradient(rgba(255,255,255,0.012), rgba(255,255,255,0.012)),
+          repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.01),
+            rgba(255,255,255,0.01) 1px,
+            transparent 1px,
+            transparent 4px
+          );
+      }
+
+      .grain {
+        background:
+          radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(255,255,255,0.03), transparent 18%),
+          #070707;
       }
 
       .card-hover {
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
 
       .card-hover:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 26px 46px rgba(0, 0, 0, 0.28);
-        border-color: rgba(216, 185, 139, 0.35);
+        transform: translate(-4px, -4px);
+        border-color: rgba(255,255,255,0.35);
       }
 
       .product-image {
@@ -108,117 +108,110 @@
       }
 
       .scrollbar-thin::-webkit-scrollbar-thumb {
-        background: rgba(216, 185, 139, 0.45);
+        background: rgba(255,255,255,0.25);
         border-radius: 999px;
       }
 
       .ring-soft {
-        box-shadow: 0 0 0 1px rgba(216, 185, 139, 0.2), 0 0 24px rgba(216, 185, 139, 0.1);
-      }
-
-      .grain {
-        background-image: linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015));
+        box-shadow: 0 0 0 1px rgba(255,255,255,0.12), 0 0 25px rgba(255,255,255,0.06);
       }
     </style>
   </head>
-  <body class="grain">
-    <div class="border-b border-white/10 bg-[#151210]">
-      <div class="mx-auto max-w-7xl px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-cream/75 sm:text-xs">
-        Cuida tu estilo • Encuentra tu esencia • Compra con confianza
+  <body class="bg-noise grain">
+    <div class="border-b border-white/10 bg-[#0d0d0d]">
+      <div class="mx-auto max-w-7xl px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-ivory/70 sm:text-xs">
+        Ropa informal • identidad real • estilo sin filtros
       </div>
     </div>
 
-    <header class="sticky top-0 z-40 border-b border-white/10 bg-[#120f0e]/80 backdrop-blur-xl">
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-[#070707]/80 backdrop-blur-xl">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#top" class="flex items-center gap-3">
-          <div class="flex h-11 w-11 items-center justify-center rounded-full border border-sand/50 bg-[#201b19] text-sm font-black tracking-[0.18em] text-sand shadow-glow">
-            Z
+          <div class="flex h-12 w-12 items-center justify-center border border-white/20 bg-white text-xs font-black tracking-[0.24em] text-black">
+            N
           </div>
           <div>
-            <p class="text-[10px] uppercase tracking-[0.34em] text-sand/80">Zen</p>
-            <h1 class="font-display text-xl leading-none text-cream">Mujer</h1>
+            <p class="text-[10px] uppercase tracking-[0.28em] text-stone/70">Naturalez</p>
+            <h1 class="font-brutal text-lg uppercase leading-none text-white">Indumentaria</h1>
           </div>
         </a>
 
-        <nav class="hidden items-center gap-7 text-sm text-cream/75 md:flex">
-          <a href="#catalog" class="transition hover:text-sand">Catálogo</a>
-          <a href="#story" class="transition hover:text-sand">Nuestra historia</a>
-          <a href="#reviews" class="transition hover:text-sand">Reseñas</a>
-          <a href="#contact" class="transition hover:text-sand">Contacto</a>
+        <nav class="hidden items-center gap-7 text-sm uppercase tracking-[0.14em] text-ivory/70 md:flex">
+          <a href="#catalog" class="transition hover:text-white">Catálogo</a>
+          <a href="#story" class="transition hover:text-white">Nosotros</a>
+          <a href="#reviews" class="transition hover:text-white">Reseñas</a>
+          <a href="#contact" class="transition hover:text-white">Contacto</a>
         </nav>
 
         <button
           id="cartButton"
-          class="relative inline-flex items-center gap-3 rounded-full border border-sand/40 bg-[#1c1817] px-4 py-2.5 text-sm font-medium text-cream transition hover:border-sand hover:bg-[#241f1d]"
+          class="relative inline-flex items-center gap-3 border border-white/15 bg-[#111111] px-4 py-2.5 text-sm font-medium uppercase tracking-[0.14em] text-white transition hover:border-white/35"
           aria-label="Abrir carrito"
         >
-          <span class="text-lg">🛍️</span>
+          <span class="text-lg">🛒</span>
           <span>Carrito</span>
-          <span id="cartCount" class="flex h-6 min-w-6 items-center justify-center rounded-full bg-sand px-1.5 text-[11px] font-black text-[#121212]">0</span>
+          <span id="cartCount" class="flex h-6 min-w-6 items-center justify-center bg-white px-1.5 text-[11px] font-black text-black">0</span>
         </button>
       </div>
     </header>
 
     <main id="top">
       <section class="relative overflow-hidden">
-        <div class="hero-blob absolute inset-0"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_26%)]"></div>
         <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
           <div>
-            <span class="inline-flex items-center rounded-full border border-sand/40 bg-sand/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-sand">
-              estilo consciente • para vivir mejor
+            <span class="inline-flex items-center border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">
+              esencia casual • auténtica
             </span>
-            <h2 class="mt-6 max-w-xl font-display text-5xl leading-[0.9] text-cream sm:text-6xl lg:text-7xl">
-              Ropa que acompaña tu ritmo.
+            <h2 class="mt-6 max-w-xl font-brutal text-5xl uppercase leading-[0.84] text-white sm:text-6xl lg:text-7xl">
+              Ropa para vivir sin filtro.
             </h2>
-            <p class="mt-5 max-w-xl text-base leading-8 text-cream/72 sm:text-lg">
-              En Zen Mujer combinamos comodidad, calidez y diseño moderno para crear looks cotidianos con identidad propia. Prendas pensadas para moverse con libertad, sentirse bien y verse impecables.
+            <p class="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
+              Naturalez Indumentaria Informal reúne estilo libre, comodidad real y actitud urbana para la vida cotidiana. Colecciones pensadas para jóvenes, niños y quienes quieren vestir sin complicarse.
             </p>
 
             <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href="#catalog" class="inline-flex items-center justify-center rounded-full gold-linear px-6 py-3 text-sm font-black text-[#17120f] shadow-glow transition hover:scale-[1.02]">
+              <a href="#catalog" class="inline-flex items-center justify-center border border-white/20 bg-white px-6 py-3 text-sm font-black uppercase tracking-[0.16em] text-black transition hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-hard">
                 Ver colección
               </a>
-              <a href="https://wa.me/5493518631873?text=Hola%20Zen%20Mujer%2C%20quiero%20consultar%20por%20la%20colecci%C3%B3n%20de%20ropa%20femenina." target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-cream transition hover:border-sand/50 hover:bg-white/10">
+              <a href="https://wa.me/5493518631873?text=Hola%20Naturalez%20Indumentaria%20Informal%2C%20quiero%20consultar%20la%20colecci%C3%B3n%20de%20ropa%20informal." target="_blank" rel="noreferrer" class="inline-flex items-center justify-center border border-white/15 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-white/40 hover:bg-white/5">
                 Consultar por WhatsApp
               </a>
             </div>
 
-            <div class="mt-10 flex flex-wrap gap-6 text-sm text-cream/70">
+            <div class="mt-10 flex flex-wrap gap-8 text-sm uppercase tracking-[0.12em] text-white/70">
               <div>
-                <p class="font-display text-3xl text-sand">+1k</p>
-                <p>clientes felices</p>
+                <p class="font-brutal text-3xl text-white">+1K</p>
+                <p class="mt-2 text-[10px]">Clientes</p>
               </div>
               <div>
-                <p class="font-display text-3xl text-sand">4.9/5</p>
-                <p>valoración media</p>
+                <p class="font-brutal text-3xl text-white">24H</p>
+                <p class="mt-2 text-[10px]">Atención</p>
               </div>
               <div>
-                <p class="font-display text-3xl text-sand">24h</p>
-                <p>respuesta rápida</p>
+                <p class="font-brutal text-3xl text-white">4.9</p>
+                <p class="mt-2 text-[10px]">Valoración</p>
               </div>
             </div>
           </div>
 
           <div class="relative">
-            <div class="absolute -left-10 top-12 h-32 w-32 rounded-full bg-sand/20 blur-3xl"></div>
-            <div class="absolute -right-8 bottom-8 h-36 w-36 rounded-full bg-rose/20 blur-3xl"></div>
+            <div class="absolute -left-10 top-12 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="absolute -right-12 bottom-10 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
 
-            <div class="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#1a1716] p-3 shadow-luxe">
+            <div class="relative border border-white/15 bg-[#111111] p-3 shadow-hard">
               <div class="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
-                <div class="overflow-hidden rounded-[22px] border border-white/10">
-                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Modelo Zen Mujer" class="h-[480px] w-full object-cover" />
+                <div class="overflow-hidden border border-white/15 bg-black">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Naturalez Indumentaria Informal" class="h-[500px] w-full object-cover grayscale" />
                 </div>
                 <div class="grid gap-3">
-                  <div class="overflow-hidden rounded-[22px] border border-white/10">
-                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Detalle de moda" class="h-[232px] w-full object-cover" />
+                  <div class="overflow-hidden border border-white/15 bg-black">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Colección informal" class="h-[236px] w-full object-cover grayscale" />
                   </div>
-                  <div class="rose-linear overflow-hidden rounded-[22px] border border-sand/20 p-4">
-                    <div class="flex items-center justify-between">
-                      <p class="text-[10px] uppercase tracking-[0.25em] text-sand">edición</p>
-                      <span class="rounded-full border border-sand/40 bg-[#201b19]/70 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sand">Fresh</span>
-                    </div>
-                    <h3 class="mt-5 font-display text-4xl leading-none text-cream">Spring</h3>
-                    <p class="mt-3 text-sm leading-6 text-cream/80">Looks suaves, transpirables y elegantes para cada día.</p>
+                  <div class="border border-white/15 bg-[#f3efe8] p-4 text-black">
+                    <p class="text-[10px] uppercase tracking-[0.22em] font-bold">Nueva edición</p>
+                    <h3 class="mt-4 font-brutal text-4xl uppercase leading-none">Essential</h3>
+                    <p class="mt-3 text-sm leading-6 text-black/75">Básicos duros, cómodos y con presencia.</p>
                   </div>
                 </div>
               </div>
@@ -230,45 +223,45 @@
       <section id="catalog" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Catálogo</p>
-            <h3 class="mt-2 font-display text-4xl text-cream sm:text-5xl">Descubrí tu mejor look</h3>
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Catálogo</p>
+            <h3 class="mt-2 font-brutal text-4xl uppercase text-white sm:text-5xl">Descubrí la próxima prenda</h3>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="filter-btn rounded-full border border-sand/40 bg-sand px-4 py-2 text-sm font-semibold text-[#111111] shadow-glow transition" data-category="Todos">Todos</button>
-            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-cream/80 transition hover:border-sand/30 hover:text-cream" data-category="Jóvenes">Jóvenes</button>
-            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-cream/80 transition hover:border-sand/30 hover:text-cream" data-category="Niños">Niños</button>
-            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-cream/80 transition hover:border-sand/30 hover:text-cream" data-category="Accesorios/Otras Prendas">Accesorios</button>
+            <button class="filter-btn border border-white/15 bg-white px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-black transition" data-category="Todos">Todos</button>
+            <button class="filter-btn border border-white/15 bg-transparent px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-white/80 transition hover:border-white/35" data-category="Jóvenes">Jóvenes</button>
+            <button class="filter-btn border border-white/15 bg-transparent px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-white/80 transition hover:border-white/35" data-category="Niños">Niños</button>
+            <button class="filter-btn border border-white/15 bg-transparent px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-white/80 transition hover:border-white/35" data-category="Accesorios/Otras Prendas">Accesorios</button>
           </div>
         </div>
 
         <div id="productGrid" class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"></div>
       </section>
 
-      <section id="story" class="bg-[#171312] py-16">
+      <section id="story" class="bg-[#111111] py-16">
         <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div class="overflow-hidden rounded-[28px] border border-white/10 bg-[#1d1716] shadow-luxe">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Historia de la marca" class="h-full min-h-[360px] w-full object-cover" />
+          <div class="overflow-hidden border border-white/15 bg-[#161616] shadow-hard">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Naturalez Indumentaria Informal" class="h-full min-h-[360px] w-full object-cover grayscale" />
           </div>
 
           <div class="flex flex-col justify-center">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Nuestra historia</p>
-            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Minimalismo, comodidad y autenticidad.</h3>
-            <p class="mt-5 text-base leading-8 text-cream/72">
-              Nacimos para ofrecer una alternativa más cálida y consciente en la indumentaria diaria. Pensamos cada pieza para acompañar el movimiento real de la mujer moderna: trabajo, calle, encuentros, momentos esenciales.
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Nosotros</p>
+            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Minimalismo con actitud.</h3>
+            <p class="mt-5 text-base leading-8 text-white/75">
+              Naturalez Indumentaria Informal nació para ofrecer una alternativa más honesta y directa en la moda casual. Prendas simples, bien hechas y pensadas para moverse con libertad. Nada de exceso: solo lo esencial, bien ejecutado.
             </p>
 
             <div class="mt-8 grid gap-4 sm:grid-cols-3">
-              <div class="rounded-2xl border border-white/10 bg-[#1f1b1a] p-4 ring-soft">
-                <p class="font-display text-4xl text-sand">100%</p>
-                <p class="mt-2 text-sm text-cream/70">Texturas suaves y de alta calidad</p>
+              <div class="border border-white/15 bg-[#1a1a1a] p-4 ring-soft">
+                <p class="font-brutal text-4xl text-white">100%</p>
+                <p class="mt-2 text-sm text-white/70">Calidad y confort</p>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-[#1f1b1a] p-4 ring-soft">
-                <p class="font-display text-4xl text-sand">24h</p>
-                <p class="mt-2 text-sm text-cream/70">Respuesta ágil por WhatsApp</p>
+              <div class="border border-white/15 bg-[#1a1a1a] p-4 ring-soft">
+                <p class="font-brutal text-4xl text-white">24H</p>
+                <p class="mt-2 text-sm text-white/70">Respuesta rápida</p>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-[#1f1b1a] p-4 ring-soft">
-                <p class="font-display text-4xl text-sand">+1k</p>
-                <p class="mt-2 text-sm text-cream/70">compras con estilo y confianza</p>
+              <div class="border border-white/15 bg-[#1a1a1a] p-4 ring-soft">
+                <p class="font-brutal text-4xl text-white">+1K</p>
+                <p class="mt-2 text-sm text-white/70">Personas que confían</p>
               </div>
             </div>
           </div>
@@ -277,69 +270,69 @@
 
       <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="mb-10 text-center">
-          <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Beneficios</p>
-          <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Lo que hace especial a Zen Mujer</h3>
+          <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Diferencia</p>
+          <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Lo que define la marca</h3>
         </div>
 
         <div class="grid gap-6 md:grid-cols-3">
-          <article class="soft-panel rounded-[26px] p-6 card-hover shadow-luxe">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-sand/30 bg-sand/10 text-xl">✦</div>
-            <h4 class="text-xl font-semibold text-cream">Diseño pensado para vos</h4>
-            <p class="mt-3 text-base leading-7 text-cream/70">Colecciones modernas, fluidas y con detalles que marcan la diferencia.</p>
+          <article class="border border-white/15 bg-[#111111] p-6 card-hover shadow-hard">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border border-white/15 bg-white text-xl font-black text-black">01</div>
+            <h4 class="font-brutal text-2xl uppercase text-white">Diseño sobrio</h4>
+            <p class="mt-3 text-base leading-7 text-white/70">Líneas secas, prendas con peso visual y personalidad fuerte.</p>
           </article>
 
-          <article class="soft-panel rounded-[26px] p-6 card-hover shadow-luxe">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-sand/30 bg-sand/10 text-xl">☼</div>
-            <h4 class="text-xl font-semibold text-cream">Comodidad real</h4>
-            <p class="mt-3 text-base leading-7 text-cream/70">Materiales suaves, transpirables y durables para usar todos los días.</p>
+          <article class="border border-white/15 bg-[#111111] p-6 card-hover shadow-hard">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border border-white/15 bg-white text-xl font-black text-black">02</div>
+            <h4 class="font-brutal text-2xl uppercase text-white">Comodidad real</h4>
+            <p class="mt-3 text-base leading-7 text-white/70">Texturas durables y prendas pensadas para usar todos los días.</p>
           </article>
 
-          <article class="soft-panel rounded-[26px] p-6 card-hover shadow-luxe">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-sand/30 bg-sand/10 text-xl">♡</div>
-            <h4 class="text-xl font-semibold text-cream">Atención cercana</h4>
-            <p class="mt-3 text-base leading-7 text-cream/70">Te acompañamos por WhatsApp para armar looks, talles y entregas sin complicaciones.</p>
+          <article class="border border-white/15 bg-[#111111] p-6 card-hover shadow-hard">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border border-white/15 bg-white text-xl font-black text-black">03</div>
+            <h4 class="font-brutal text-2xl uppercase text-white">Atención directa</h4>
+            <p class="mt-3 text-base leading-7 text-white/70">Consultas rápidas por WhatsApp y coordinación sin vueltas.</p>
           </article>
         </div>
       </section>
 
-      <section id="reviews" class="bg-[#171312] py-16">
+      <section id="reviews" class="bg-[#111111] py-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-10 text-center">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Reseñas</p>
-            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Lo que dicen nuestras clientas</h3>
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Reseñas</p>
+            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Lo que dicen</h3>
           </div>
 
           <div class="grid gap-6 md:grid-cols-3">
-            <article class="rounded-[26px] border border-white/10 bg-[#1d1716] p-6 card-hover shadow-luxe">
-              <div class="mb-4 flex text-sand">★★★★★</div>
-              <p class="text-base leading-7 text-cream/75">
-                “La calidad es excelente y el estilo me encantó. Compré un conjunto para salir y lo usé varias veces porque es súper cómodo.”
+            <article class="border border-white/15 bg-[#181818] p-6 card-hover shadow-hard">
+              <div class="mb-4 flex text-white">★★★★★</div>
+              <p class="text-base leading-7 text-white/75">
+                “La calidad es excelente y la estética muy auténtica. Tiene ese look informal y bien hecho que se busca.”
               </p>
               <div class="mt-6 border-t border-white/10 pt-4">
-                <p class="font-semibold text-cream">María L.</p>
-                <p class="text-sm text-cream/55">Cliente de la colección</p>
+                <p class="font-semibold text-white">María L.</p>
+                <p class="text-sm text-white/55">Cliente</p>
               </div>
             </article>
 
-            <article class="rounded-[26px] border border-white/10 bg-[#1d1716] p-6 card-hover shadow-luxe">
-              <div class="mb-4 flex text-sand">★★★★★</div>
-              <p class="text-base leading-7 text-cream/75">
-                “Pedí por WhatsApp y todo fue muy simple. La atención fue rápida, amable y me ayudaron a elegir la mejor opción.”
+            <article class="border border-white/15 bg-[#181818] p-6 card-hover shadow-hard">
+              <div class="mb-4 flex text-white">★★★★★</div>
+              <p class="text-base leading-7 text-white/75">
+                “Pedí por WhatsApp y me ayudaron enseguida. El look es muy claro, cómodo y moderno.”
               </p>
               <div class="mt-6 border-t border-white/10 pt-4">
-                <p class="font-semibold text-cream">Sofía R.</p>
-                <p class="text-sm text-cream/55">Cliente premium</p>
+                <p class="font-semibold text-white">Sofía R.</p>
+                <p class="text-sm text-white/55">Cliente premium</p>
               </div>
             </article>
 
-            <article class="rounded-[26px] border border-white/10 bg-[#1d1716] p-6 card-hover shadow-luxe">
-              <div class="mb-4 flex text-sand">★★★★★</div>
-              <p class="text-base leading-7 text-cream/75">
-                “El local tiene una vibra muy linda y las prendas tienen ese equilibrio justo entre casual y elegante. Me encantó.”
+            <article class="border border-white/15 bg-[#181818] p-6 card-hover shadow-hard">
+              <div class="mb-4 flex text-white">★★★★★</div>
+              <p class="text-base leading-7 text-white/75">
+                “Me gusta la vibra de la marca: directa, simple y muy wearable. Las prendas se sienten bien y se ven bien.”
               </p>
               <div class="mt-6 border-t border-white/10 pt-4">
-                <p class="font-semibold text-cream">Lucía M.</p>
-                <p class="text-sm text-cream/55">Cliente de barrio</p>
+                <p class="font-semibold text-white">Lucía M.</p>
+                <p class="text-sm text-white/55">Cliente</p>
               </div>
             </article>
           </div>
@@ -348,59 +341,59 @@
 
       <section id="contact" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <div class="rounded-[28px] border border-white/10 bg-[#171312] p-6 sm:p-8 shadow-luxe">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Contacto</p>
-            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Te esperamos en el local</h3>
-            <div class="mt-6 space-y-5 text-cream/75">
+          <div class="border border-white/15 bg-[#111111] p-6 sm:p-8 shadow-hard">
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Contacto</p>
+            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Ubicación y atención</h3>
+            <div class="mt-6 space-y-5 text-white/75">
               <div>
-                <p class="text-sm uppercase tracking-[0.22em] text-sand/80">Horarios</p>
+                <p class="text-sm uppercase tracking-[0.22em] text-white/60">Horarios</p>
                 <p class="mt-2 text-base">Lunes a Sábados de 17:00 a 21:00 hs.</p>
               </div>
               <div>
-                <p class="text-sm uppercase tracking-[0.22em] text-sand/80">Dirección</p>
+                <p class="text-sm uppercase tracking-[0.22em] text-white/60">Dirección</p>
                 <p class="mt-2 text-base">Av. Alfonsina Storni 717-701, X5019 Córdoba.</p>
               </div>
               <div>
-                <p class="text-sm uppercase tracking-[0.22em] text-sand/80">WhatsApp</p>
+                <p class="text-sm uppercase tracking-[0.22em] text-white/60">WhatsApp</p>
                 <p class="mt-2 text-base">+54 9 351 863-1873</p>
               </div>
             </div>
           </div>
 
-          <div class="rounded-[28px] border border-white/10 bg-[#171312] p-6 sm:p-8 shadow-luxe">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-sand">Redes</p>
-            <h3 class="mt-3 font-display text-4xl text-cream sm:text-5xl">Seguinos</h3>
+          <div class="border border-white/15 bg-[#111111] p-6 sm:p-8 shadow-hard">
+            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Redes</p>
+            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Seguinos</h3>
             <div class="mt-6 grid gap-4 sm:grid-cols-2">
-              <a href="https://instagram.com/naturaleza_ropa" target="_blank" rel="noreferrer" class="rounded-2xl border border-white/10 bg-[#201b1a] p-4 transition hover:border-sand/40 hover:bg-[#261f1d]">
-                <p class="text-sm uppercase tracking-[0.2em] text-sand">Instagram</p>
-                <p class="mt-2 text-lg font-semibold text-cream">@naturaleza_ropa</p>
+              <a href="https://instagram.com/naturaleza_ropa" target="_blank" rel="noreferrer" class="border border-white/15 bg-[#181818] p-4 transition hover:border-white/35">
+                <p class="text-sm uppercase tracking-[0.2em] text-white/60">Instagram</p>
+                <p class="mt-2 text-lg font-semibold text-white">@naturaleza_ropa</p>
               </a>
-              <a href="https://facebook.com/Naturaleza-ropa-inf" target="_blank" rel="noreferrer" class="rounded-2xl border border-white/10 bg-[#201b1a] p-4 transition hover:border-sand/40 hover:bg-[#261f1d]">
-                <p class="text-sm uppercase tracking-[0.2em] text-sand">Facebook</p>
-                <p class="mt-2 text-lg font-semibold text-cream">Naturaleza ropa inf</p>
+              <a href="https://facebook.com/Naturaleza-ropa-inf" target="_blank" rel="noreferrer" class="border border-white/15 bg-[#181818] p-4 transition hover:border-white/35">
+                <p class="text-sm uppercase tracking-[0.2em] text-white/60">Facebook</p>
+                <p class="mt-2 text-lg font-semibold text-white">Naturaleza ropa inf</p>
               </a>
             </div>
-            <div class="mt-8 rounded-2xl border border-sand/30 bg-sand/10 p-4">
-              <p class="text-sm uppercase tracking-[0.2em] text-sand">Tip de compra</p>
-              <p class="mt-2 text-base leading-7 text-cream/80">Consultá por WhatsApp para combinar looks, talles y disponibilidad antes de retirar o enviar.</p>
+            <div class="mt-8 border border-white/15 bg-white p-4 text-black">
+              <p class="text-sm uppercase tracking-[0.2em] font-bold">Tip de compra</p>
+              <p class="mt-2 text-base leading-7 text-black/80">Consultá por WhatsApp para combinar looks, talles y disponibilidad antes de retirar o mandar.</p>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-white/10 bg-[#0f0d0c] py-6">
-      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-cream/60 sm:flex-row sm:px-6 lg:px-8">
-        <p>© 2025 Zen Mujer | Estilo para vivir con calma.</p>
-        <p>Diseños elegantes, cómodos y auténticos.</p>
+    <footer class="border-t border-white/10 bg-[#060606] py-6">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-white/60 sm:flex-row sm:px-6 lg:px-8">
+        <p>© 2025 Naturalez Indumentaria Informal</p>
+        <p>Estilo casual, real y sin filtro.</p>
       </div>
     </footer>
 
     <a
-      href="https://wa.me/5493518631873?text=Hola%20Zen%20Mujer%2C%20quiero%20consultar%20una%20prenda%20o%20armar%20un%20look."
+      href="https://wa.me/5493518631873?text=Hola%20Naturalez%20Indumentaria%20Informal%2C%20quiero%20consultar%20por%20la%20colecci%C3%B3n%20de%20ropa%20informal."
       target="_blank"
       rel="noreferrer"
-      class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl shadow-2xl shadow-green-500/25 transition hover:scale-105"
+      class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center bg-[#25D366] text-2xl shadow-2xl shadow-green-500/25 transition hover:scale-105"
       aria-label="Chatear por WhatsApp"
     >
       💬
@@ -408,10 +401,10 @@
 
     <div id="cartModal" class="fixed inset-0 z-50 hidden bg-black/70 p-4 backdrop-blur-sm">
       <div class="mx-auto flex h-full max-w-2xl items-center justify-center">
-        <div class="w-full rounded-[28px] border border-white/10 bg-[#171312] shadow-2xl shadow-black/40">
+        <div class="w-full border border-white/15 bg-[#111111] shadow-2xl shadow-black/40">
           <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <h3 class="text-xl font-black text-cream">Tu carrito</h3>
-            <button id="closeCart" class="text-2xl text-cream/70 transition hover:text-sand">×</button>
+            <h3 class="font-brutal text-2xl uppercase text-white">Tu carrito</h3>
+            <button id="closeCart" class="text-2xl text-white/70 transition hover:text-white">×</button>
           </div>
 
           <div class="max-h-[55vh] overflow-y-auto px-5 py-4 scrollbar-thin">
@@ -419,27 +412,27 @@
           </div>
 
           <div class="border-t border-white/10 px-5 py-5">
-            <div class="mb-4 flex items-center justify-between text-cream/80">
+            <div class="mb-4 flex items-center justify-between text-white/80">
               <span class="text-sm uppercase tracking-[0.14em]">Total</span>
-              <span id="totalPrice" class="text-2xl font-black text-sand">$0</span>
+              <span id="totalPrice" class="font-brutal text-3xl text-white">$0</span>
             </div>
 
             <div class="space-y-3">
               <label class="block">
-                <span class="mb-1.5 block text-sm text-cream/70">Nombre del cliente</span>
-                <input id="customerName" type="text" placeholder="Ej: María López" class="w-full rounded-xl border border-white/10 bg-[#1d1716] px-3 py-3 text-cream outline-none transition focus:border-sand/50" />
+                <span class="mb-1.5 block text-sm text-white/70">Nombre del cliente</span>
+                <input id="customerName" type="text" placeholder="Ej: María López" class="w-full border border-white/15 bg-[#181818] px-3 py-3 text-white outline-none transition focus:border-white/40" />
               </label>
 
               <label class="block">
-                <span class="mb-1.5 block text-sm text-cream/70">Método de entrega</span>
-                <select id="shippingMethod" class="w-full rounded-xl border border-white/10 bg-[#1d1716] px-3 py-3 text-cream outline-none transition focus:border-sand/50">
+                <span class="mb-1.5 block text-sm text-white/70">Método de entrega</span>
+                <select id="shippingMethod" class="w-full border border-white/15 bg-[#181818] px-3 py-3 text-white outline-none transition focus:border-white/40">
                   <option value="Retiro en local (Av. Alfonsina Storni 717)">Retiro en local (Av. Alfonsina Storni 717)</option>
                   <option value="Envío a domicilio">Envío a domicilio</option>
                 </select>
               </label>
             </div>
 
-            <button id="checkoutButton" class="mt-5 w-full rounded-full gold-linear px-5 py-3 text-sm font-black text-[#121212] transition hover:brightness-110">
+            <button id="checkoutButton" class="mt-5 w-full border border-white/15 bg-white px-5 py-3 text-sm font-black uppercase tracking-[0.16em] text-black transition hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-hard">
               Finalizar Pedido por WhatsApp
             </button>
           </div>
@@ -449,14 +442,14 @@
 
     <script>
       const products = [
-        { id: 1, name: 'Conjunto Aura', category: 'Jóvenes', price: 24500, image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 2, name: 'Conjunto Celeste', category: 'Jóvenes', price: 26900, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 3, name: 'Set Nativa', category: 'Jóvenes', price: 28900, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 4, name: 'Blazer Modo', category: 'Jóvenes', price: 31900, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 5, name: 'Pijama Luna', category: 'Niños', price: 19900, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
-        { id: 6, name: 'Set Verano', category: 'Niños', price: 21900, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
-        { id: 7, name: 'Mochila Zen', category: 'Accesorios/Otras Prendas', price: 12900, image: 'https://images.unsplash.com/photo-1521369909026-2afed882baee?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
-        { id: 8, name: 'Gorra Solaris', category: 'Accesorios/Otras Prendas', price: 14900, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
+        { id: 1, name: 'Conjunto N1', category: 'Jóvenes', price: 24500, image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 2, name: 'Conjunto N2', category: 'Jóvenes', price: 26900, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 3, name: 'Conjunto N3', category: 'Jóvenes', price: 28900, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 4, name: 'Conjunto N4', category: 'Jóvenes', price: 31900, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
+        { id: 5, name: 'Conjunto N5', category: 'Niños', price: 19900, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
+        { id: 6, name: 'Conjunto N6', category: 'Niños', price: 21900, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
+        { id: 7, name: 'Mochila N7', category: 'Accesorios/Otras Prendas', price: 12900, image: 'https://images.unsplash.com/photo-1521369909026-2afed882baee?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
+        { id: 8, name: 'Gorra N8', category: 'Accesorios/Otras Prendas', price: 14900, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
       ];
 
       const state = {
@@ -487,18 +480,18 @@
         productGrid.innerHTML = filtered
           .map(
             (product) => `
-              <article class="group overflow-hidden rounded-[26px] border border-white/10 bg-[#1b1716] card-hover shadow-luxe">
+              <article class="group overflow-hidden border border-white/15 bg-[#111111] card-hover shadow-hard">
                 <div class="relative overflow-hidden">
-                  <img src="${product.image}" alt="${product.name}" class="product-image w-full transition duration-500 group-hover:scale-105" />
-                  <span class="absolute left-3 top-3 rounded-full border border-sand/40 bg-[#1b1716]/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sand">
+                  <img src="${product.image}" alt="${product.name}" class="product-image w-full grayscale transition duration-500 group-hover:scale-105" />
+                  <span class="absolute left-3 top-3 border border-white/15 bg-black/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">
                     ${product.tag}
                   </span>
                 </div>
                 <div class="p-5">
-                  <h4 class="text-lg font-semibold text-cream">${product.name}</h4>
+                  <h4 class="font-brutal text-2xl uppercase text-white">${product.name}</h4>
                   <div class="mt-3 flex items-center justify-between gap-3">
-                    <span class="text-xl font-black text-sand">${formatPrice(product.price)}</span>
-                    <button data-add="${product.id}" class="add-to-cart rounded-full bg-sand px-4 py-2 text-sm font-semibold text-[#111111] transition hover:bg-[#e7ca7a]">
+                    <span class="font-brutal text-2xl text-white">${formatPrice(product.price)}</span>
+                    <button data-add="${product.id}" class="add-to-cart border border-white/15 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-black transition hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-hard">
                       + Agregar
                     </button>
                   </div>
@@ -533,8 +526,8 @@
       function renderCart() {
         if (!state.cart.length) {
           cartItems.innerHTML = `
-            <div class="rounded-2xl border border-dashed border-white/15 bg-[#1d1716] p-6 text-center">
-              <p class="text-base text-cream/70">Tu carrito está vacío.</p>
+            <div class="rounded-none border border-dashed border-white/15 bg-[#181818] p-6 text-center">
+              <p class="text-base text-white/70">Tu carrito está vacío.</p>
             </div>
           `;
           cartCount.textContent = '0';
@@ -554,18 +547,18 @@
         cartItems.innerHTML = cartProducts
           .map(
             (item) => `
-              <div class="cart-item-enter flex items-center gap-3 rounded-2xl border border-white/10 bg-[#1d1716] p-3">
-                <img src="${item.image}" alt="${item.name}" class="h-20 w-20 rounded-xl object-cover" />
+              <div class="flex items-center gap-3 border border-white/15 bg-[#181818] p-3">
+                <img src="${item.image}" alt="${item.name}" class="h-20 w-20 rounded-none object-cover grayscale" />
                 <div class="min-w-0 flex-1">
-                  <p class="truncate text-sm font-semibold text-cream">${item.name}</p>
-                  <p class="mt-1 text-sm text-sand">${formatPrice(item.price)}</p>
+                  <p class="truncate text-sm font-semibold text-white">${item.name}</p>
+                  <p class="mt-1 text-sm text-white/70">${formatPrice(item.price)}</p>
                 </div>
-                <div class="flex items-center gap-2 rounded-full border border-white/10 bg-[#121111] px-2 py-1">
-                  <button data-action="decrement" data-id="${item.id}" class="qty-btn text-lg text-cream/70 transition hover:text-sand">−</button>
-                  <span class="min-w-[22px] text-center text-sm font-semibold text-cream">${item.quantity}</span>
-                  <button data-action="increment" data-id="${item.id}" class="qty-btn text-lg text-cream/70 transition hover:text-sand">+</button>
+                <div class="flex items-center gap-2 border border-white/15 bg-black px-2 py-1">
+                  <button data-action="decrement" data-id="${item.id}" class="qty-btn text-lg text-white/80 transition hover:text-white">−</button>
+                  <span class="min-w-[22px] text-center text-sm font-semibold text-white">${item.quantity}</span>
+                  <button data-action="increment" data-id="${item.id}" class="qty-btn text-lg text-white/80 transition hover:text-white">+</button>
                 </div>
-                <button data-action="remove" data-id="${item.id}" class="ml-1 text-sm text-cream/50 transition hover:text-red-300">Eliminar</button>
+                <button data-action="remove" data-id="${item.id}" class="ml-1 text-sm text-white/50 transition hover:text-white">Eliminar</button>
               </div>
             `
           )
@@ -615,12 +608,12 @@
         button.addEventListener('click', () => {
           state.activeCategory = button.dataset.category;
           document.querySelectorAll('.filter-btn').forEach((btn) => {
-            btn.classList.remove('bg-sand', 'text-[#111111]');
-            btn.classList.add('bg-white/5', 'text-cream/80', 'border-white/10');
+            btn.classList.remove('bg-white', 'text-black');
+            btn.classList.add('bg-transparent', 'text-white/80', 'border-white/15');
           });
 
-          button.classList.remove('bg-white/5', 'text-cream/80', 'border-white/10');
-          button.classList.add('bg-sand', 'text-[#111111]', 'border-sand/40');
+          button.classList.remove('bg-transparent', 'text-white/80', 'border-white/15');
+          button.classList.add('bg-white', 'text-black', 'border-white');
 
           renderProducts();
         });
@@ -656,7 +649,7 @@
           return acc + product.price * item.quantity;
         }, 0);
 
-        const message = `Hola Zen Mujer, quiero confirmar mi pedido.%0A%0A` +
+        const message = `Hola Naturalez Indumentaria Informal, quiero confirmar mi pedido.%0A%0A` +
           `Cliente: ${customerName}%0A` +
           `Método de entrega: ${shippingMethod}%0A%0A` +
           `Productos:%0A${cartProducts.join('%0A')}%0A%0A` +
