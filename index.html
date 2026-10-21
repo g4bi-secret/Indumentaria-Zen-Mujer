@@ -5,46 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Naturalez Indumentaria Informal — ropa casual, urbana y auténtica para jóvenes y niños."
+      content="Herencia Jeans — indumentaria informal y jeanswear con estilo urbano, comodidad y calidad."
     />
-    <title>Naturalez Indumentaria Informal</title>
+    <title>Herencia Jeans</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              ink: '#080808',
-              panel: '#111111',
-              panelAlt: '#171717',
-              stone: '#e8e2d8',
-              ivory: '#f5f1ea',
-              ash: '#a7a29d',
-              line: '#2d2d2d',
-              accent: '#d9d2c7',
-              warm: '#cbbca5',
+              charcoal: '#0F0F11',
+              charcoalSoft: '#1E1E22',
+              tan: '#E2C792',
+              gold: '#D4AF37',
+              ivory: '#F4EFEA',
+              stone: '#A9A7B4',
+              line: '#2B2B2F',
+              panel: '#17171A',
             },
             boxShadow: {
-              brutal: '10px 10px 0 rgba(255,255,255,0.08)',
-              hard: '10px 10px 0 rgba(0,0,0,0.25)',
+              luxe: '0 16px 34px rgba(0,0,0,0.24)',
+              soft: '0 12px 24px rgba(212, 175, 55, 0.14)',
             },
           },
         },
       };
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
       :root {
-        --bg: #070707;
-        --panel: #111111;
-        --panel-alt: #181818;
-        --ink: #0c0c0c;
-        --ivory: #f5f1ea;
-        --stone: #e8e2d8;
-        --muted: #a7a29d;
-        --line: rgba(255,255,255,0.14);
-        --accent: #d9d2c7;
+        --bg: #0f0f11;
+        --panel: #1e1e22;
+        --panel-strong: #17171a;
+        --gold: #d4af37;
+        --tan: #e2c792;
+        --ivory: #f4efea;
+        --muted: #a9a7b4;
+        --line: rgba(255,255,255,0.08);
       }
 
       html {
@@ -53,53 +51,54 @@
 
       body {
         font-family: 'Inter', sans-serif;
-        background: #070707;
+        background: var(--bg);
         color: var(--ivory);
       }
 
-      .font-brutal {
-        font-family: 'Archivo', sans-serif;
-        letter-spacing: -0.06em;
+      .bg-hero {
+        background:
+          radial-gradient(circle at top left, rgba(212, 175, 55, 0.12), transparent 26%),
+          radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 18%),
+          #0f0f11;
       }
 
-      .outline-line {
+      .soft-panel {
+        background: linear-gradient(180deg, rgba(30,30,34,0.92), rgba(17,17,18,0.98));
         border: 1px solid var(--line);
       }
 
-      .shadow-brutal {
-        box-shadow: 10px 10px 0 rgba(255,255,255,0.06);
+      .gold-gradient {
+        background: linear-gradient(135deg, #d4af37 0%, #e2c792 50%, #f1d98f 100%);
       }
 
-      .bg-noise {
-        background-image:
-          linear-gradient(rgba(255,255,255,0.012), rgba(255,255,255,0.012)),
-          repeating-linear-gradient(
-            0deg,
-            rgba(255,255,255,0.01),
-            rgba(255,255,255,0.01) 1px,
-            transparent 1px,
-            transparent 4px
-          );
+      .marquee {
+        overflow: hidden;
+        white-space: nowrap;
       }
 
-      .grain {
-        background:
-          radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 24%),
-          radial-gradient(circle at bottom right, rgba(255,255,255,0.03), transparent 18%),
-          #070707;
+      .marquee-inner {
+        display: inline-flex;
+        min-width: max-content;
+        animation: scroll 20s linear infinite;
+      }
+
+      @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
       }
 
       .card-hover {
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       }
 
       .card-hover:hover {
-        transform: translate(-4px, -4px);
-        border-color: rgba(255,255,255,0.35);
+        transform: translateY(-6px);
+        border-color: rgba(212,175,55,0.5);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.2);
       }
 
       .product-image {
-        height: 340px;
+        height: 320px;
         object-fit: cover;
       }
 
@@ -108,110 +107,105 @@
       }
 
       .scrollbar-thin::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,0.25);
+        background: rgba(212,175,55,0.4);
         border-radius: 999px;
       }
 
-      .ring-soft {
-        box-shadow: 0 0 0 1px rgba(255,255,255,0.12), 0 0 25px rgba(255,255,255,0.06);
+      .ring-gold {
+        box-shadow: 0 0 0 1px rgba(212,175,55,0.18), 0 0 28px rgba(212,175,55,0.08);
       }
     </style>
   </head>
-  <body class="bg-noise grain">
-    <div class="border-b border-white/10 bg-[#0d0d0d]">
-      <div class="mx-auto max-w-7xl px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-ivory/70 sm:text-xs">
-        Ropa informal • identidad real • estilo sin filtros
+  <body class="bg-charcoal">
+    <div class="sticky top-0 z-50 border-b border-white/10 bg-[#101113]">
+      <div class="marquee text-[10px] font-semibold uppercase tracking-[0.28em] text-ivory/80 sm:text-xs">
+        <div class="marquee-inner py-2">
+          <span class="mx-8">💳 6 Cuotas sin interés</span>
+          <span class="mx-8">💵 15% OFF Efectivo</span>
+          <span class="mx-8">📲 10% OFF Transferencia</span>
+          <span class="mx-8">💳 6 Cuotas sin interés</span>
+          <span class="mx-8">💵 15% OFF Efectivo</span>
+          <span class="mx-8">📲 10% OFF Transferencia</span>
+        </div>
       </div>
     </div>
 
-    <header class="sticky top-0 z-40 border-b border-white/10 bg-[#070707]/80 backdrop-blur-xl">
+    <header class="border-b border-white/10 bg-[#0d0d0f]/90 backdrop-blur-xl">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#top" class="flex items-center gap-3">
-          <div class="flex h-12 w-12 items-center justify-center border border-white/20 bg-white text-xs font-black tracking-[0.24em] text-black">
-            N
-          </div>
+        <div class="flex items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center border border-gold/30 bg-[#1a1a1d] text-sm font-black tracking-[0.2em] text-gold">H</div>
           <div>
-            <p class="text-[10px] uppercase tracking-[0.28em] text-stone/70">Naturalez</p>
-            <h1 class="font-brutal text-lg uppercase leading-none text-white">Indumentaria</h1>
+            <p class="text-[10px] uppercase tracking-[0.34em] text-gold/80">Herencia</p>
+            <h1 class="text-base font-black uppercase tracking-[0.14em] text-ivory">Jeans</h1>
           </div>
-        </a>
+        </div>
 
-        <nav class="hidden items-center gap-7 text-sm uppercase tracking-[0.14em] text-ivory/70 md:flex">
-          <a href="#catalog" class="transition hover:text-white">Catálogo</a>
-          <a href="#story" class="transition hover:text-white">Nosotros</a>
-          <a href="#reviews" class="transition hover:text-white">Reseñas</a>
-          <a href="#contact" class="transition hover:text-white">Contacto</a>
+        <nav class="hidden items-center gap-7 text-xs uppercase tracking-[0.18em] text-ivory/70 md:flex">
+          <a href="#catalog" class="transition hover:text-gold">Catálogo</a>
+          <a href="#promos" class="transition hover:text-gold">Promos</a>
+          <a href="#contact" class="transition hover:text-gold">Contacto</a>
         </nav>
 
         <button
           id="cartButton"
-          class="relative inline-flex items-center gap-3 border border-white/15 bg-[#111111] px-4 py-2.5 text-sm font-medium uppercase tracking-[0.14em] text-white transition hover:border-white/35"
+          class="relative inline-flex items-center gap-3 rounded-full border border-gold/40 bg-[#1b1b1f] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-ivory transition hover:border-gold/70"
           aria-label="Abrir carrito"
         >
           <span class="text-lg">🛒</span>
           <span>Carrito</span>
-          <span id="cartCount" class="flex h-6 min-w-6 items-center justify-center bg-white px-1.5 text-[11px] font-black text-black">0</span>
+          <span id="cartCount" class="flex h-6 min-w-6 items-center justify-center rounded-full bg-gold px-1.5 text-[10px] font-black text-[#111111]">0</span>
         </button>
       </div>
     </header>
 
-    <main id="top">
-      <section class="relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_26%)]"></div>
-        <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
+    <main>
+      <section class="bg-hero">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
           <div>
-            <span class="inline-flex items-center border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">
-              esencia casual • auténtica
+            <span class="inline-flex items-center rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+              estilo urbano • calidad real
             </span>
-            <h2 class="mt-6 max-w-xl font-brutal text-5xl uppercase leading-[0.84] text-white sm:text-6xl lg:text-7xl">
-              Ropa para vivir sin filtro.
+            <h2 class="mt-6 max-w-xl text-4xl font-black leading-[0.95] tracking-[-0.06em] text-ivory sm:text-5xl lg:text-7xl">
+              Estilo que trasciende. <span class="text-gold">Calidad que perdura.</span>
             </h2>
-            <p class="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
-              Naturalez Indumentaria Informal reúne estilo libre, comodidad real y actitud urbana para la vida cotidiana. Colecciones pensadas para jóvenes, niños y quienes quieren vestir sin complicarse.
+            <p class="mt-5 max-w-xl text-base leading-8 text-ivory/75 sm:text-lg">
+              Encontrá las mejores prendas de vestir e indumentaria informal pensadas para tu ritmo diario. Aprovechá nuestras promociones exclusivas en efectivo, transferencia y tarjetas.
             </p>
-
             <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href="#catalog" class="inline-flex items-center justify-center border border-white/20 bg-white px-6 py-3 text-sm font-black uppercase tracking-[0.16em] text-black transition hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-hard">
-                Ver colección
+              <a href="#catalog" class="inline-flex items-center justify-center rounded-full gold-gradient px-6 py-3 text-sm font-black uppercase tracking-[0.14em] text-[#141414] shadow-soft transition hover:scale-[1.02]">
+                Ver Catálogo
               </a>
-              <a href="https://wa.me/5493518631873?text=Hola%20Naturalez%20Indumentaria%20Informal%2C%20quiero%20consultar%20la%20colecci%C3%B3n%20de%20ropa%20informal." target="_blank" rel="noreferrer" class="inline-flex items-center justify-center border border-white/15 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-white/40 hover:bg-white/5">
+              <a href="https://wa.me/5493515060531?text=Hola%20Herencia%20Jeans%2C%20quiero%20consultar%20por%20la%20colecci%C3%B3n%20de%20indumentaria%20informal." target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-ivory transition hover:border-gold/40 hover:bg-white/10">
                 Consultar por WhatsApp
               </a>
-            </div>
-
-            <div class="mt-10 flex flex-wrap gap-8 text-sm uppercase tracking-[0.12em] text-white/70">
-              <div>
-                <p class="font-brutal text-3xl text-white">+1K</p>
-                <p class="mt-2 text-[10px]">Clientes</p>
-              </div>
-              <div>
-                <p class="font-brutal text-3xl text-white">24H</p>
-                <p class="mt-2 text-[10px]">Atención</p>
-              </div>
-              <div>
-                <p class="font-brutal text-3xl text-white">4.9</p>
-                <p class="mt-2 text-[10px]">Valoración</p>
-              </div>
             </div>
           </div>
 
           <div class="relative">
-            <div class="absolute -left-10 top-12 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
-            <div class="absolute -right-12 bottom-10 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
+            <div class="absolute -left-10 top-10 h-32 w-32 rounded-full bg-gold/10 blur-3xl"></div>
+            <div class="absolute -right-10 bottom-10 h-36 w-36 rounded-full bg-white/5 blur-3xl"></div>
 
-            <div class="relative border border-white/15 bg-[#111111] p-3 shadow-hard">
+            <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#17171a] p-3 shadow-luxe">
               <div class="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
-                <div class="overflow-hidden border border-white/15 bg-black">
-                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Naturalez Indumentaria Informal" class="h-[500px] w-full object-cover grayscale" />
+                <div class="overflow-hidden rounded-[22px] border border-white/10 bg-black">
+                  <img
+                    src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80"
+                    alt="Modelo con estilo casual"
+                    class="h-[500px] w-full object-cover"
+                  />
                 </div>
                 <div class="grid gap-3">
-                  <div class="overflow-hidden border border-white/15 bg-black">
-                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Colección informal" class="h-[236px] w-full object-cover grayscale" />
+                  <div class="overflow-hidden rounded-[22px] border border-white/10 bg-black">
+                    <img
+                      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80"
+                      alt="Jeanwear detalle"
+                      class="h-[238px] w-full object-cover"
+                    />
                   </div>
-                  <div class="border border-white/15 bg-[#f3efe8] p-4 text-black">
-                    <p class="text-[10px] uppercase tracking-[0.22em] font-bold">Nueva edición</p>
-                    <h3 class="mt-4 font-brutal text-4xl uppercase leading-none">Essential</h3>
-                    <p class="mt-3 text-sm leading-6 text-black/75">Básicos duros, cómodos y con presencia.</p>
+                  <div class="rounded-[22px] border border-gold/20 bg-[#f2efe8] p-4 text-[#121212]">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-[#1a1a1a]/70">Colección</p>
+                    <h3 class="mt-3 text-3xl font-black tracking-[-0.06em] text-[#121212]">Urban Core</h3>
+                    <p class="mt-2 text-sm leading-6 text-[#1a1a1a]/75">Jeans, basics y layers para cada día.</p>
                   </div>
                 </div>
               </div>
@@ -223,216 +217,146 @@
       <section id="catalog" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Catálogo</p>
-            <h3 class="mt-2 font-brutal text-4xl uppercase text-white sm:text-5xl">Descubrí la próxima prenda</h3>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Catálogo</p>
+            <h3 class="mt-2 text-3xl font-black tracking-[-0.06em] text-ivory sm:text-4xl">Explorá la edición actual</h3>
           </div>
+
           <div class="flex flex-wrap gap-2">
-            <button class="filter-btn border border-white/15 bg-white px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-black transition" data-category="Todos">Todos</button>
-            <button class="filter-btn border border-white/15 bg-transparent px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-white/80 transition hover:border-white/35" data-category="Jóvenes">Jóvenes</button>
-            <button class="filter-btn border border-white/15 bg-transparent px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-white/80 transition hover:border-white/35" data-category="Niños">Niños</button>
-            <button class="filter-btn border border-white/15 bg-transparent px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-white/80 transition hover:border-white/35" data-category="Accesorios/Otras Prendas">Accesorios</button>
+            <button class="filter-btn rounded-full border border-gold/40 bg-gold px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#141414]" data-category="Todos">Todos</button>
+            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] text-ivory/75 transition hover:border-gold/30" data-category="Jeans & Pantalones">Jeans &amp; Pantalones</button>
+            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] text-ivory/75 transition hover:border-gold/30" data-category="Remeras & Tops">Remeras &amp; Tops</button>
+            <button class="filter-btn rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] text-ivory/75 transition hover:border-gold/30" data-category="Abrigos & Jackets">Abrigos &amp; Jackets</button>
           </div>
         </div>
 
         <div id="productGrid" class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"></div>
       </section>
 
-      <section id="story" class="bg-[#111111] py-16">
-        <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div class="overflow-hidden border border-white/15 bg-[#161616] shadow-hard">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Naturalez Indumentaria Informal" class="h-full min-h-[360px] w-full object-cover grayscale" />
-          </div>
-
-          <div class="flex flex-col justify-center">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Nosotros</p>
-            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Minimalismo con actitud.</h3>
-            <p class="mt-5 text-base leading-8 text-white/75">
-              Naturalez Indumentaria Informal nació para ofrecer una alternativa más honesta y directa en la moda casual. Prendas simples, bien hechas y pensadas para moverse con libertad. Nada de exceso: solo lo esencial, bien ejecutado.
-            </p>
-
-            <div class="mt-8 grid gap-4 sm:grid-cols-3">
-              <div class="border border-white/15 bg-[#1a1a1a] p-4 ring-soft">
-                <p class="font-brutal text-4xl text-white">100%</p>
-                <p class="mt-2 text-sm text-white/70">Calidad y confort</p>
-              </div>
-              <div class="border border-white/15 bg-[#1a1a1a] p-4 ring-soft">
-                <p class="font-brutal text-4xl text-white">24H</p>
-                <p class="mt-2 text-sm text-white/70">Respuesta rápida</p>
-              </div>
-              <div class="border border-white/15 bg-[#1a1a1a] p-4 ring-soft">
-                <p class="font-brutal text-4xl text-white">+1K</p>
-                <p class="mt-2 text-sm text-white/70">Personas que confían</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="mb-10 text-center">
-          <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Diferencia</p>
-          <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Lo que define la marca</h3>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <article class="border border-white/15 bg-[#111111] p-6 card-hover shadow-hard">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center border border-white/15 bg-white text-xl font-black text-black">01</div>
-            <h4 class="font-brutal text-2xl uppercase text-white">Diseño sobrio</h4>
-            <p class="mt-3 text-base leading-7 text-white/70">Líneas secas, prendas con peso visual y personalidad fuerte.</p>
-          </article>
-
-          <article class="border border-white/15 bg-[#111111] p-6 card-hover shadow-hard">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center border border-white/15 bg-white text-xl font-black text-black">02</div>
-            <h4 class="font-brutal text-2xl uppercase text-white">Comodidad real</h4>
-            <p class="mt-3 text-base leading-7 text-white/70">Texturas durables y prendas pensadas para usar todos los días.</p>
-          </article>
-
-          <article class="border border-white/15 bg-[#111111] p-6 card-hover shadow-hard">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center border border-white/15 bg-white text-xl font-black text-black">03</div>
-            <h4 class="font-brutal text-2xl uppercase text-white">Atención directa</h4>
-            <p class="mt-3 text-base leading-7 text-white/70">Consultas rápidas por WhatsApp y coordinación sin vueltas.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="reviews" class="bg-[#111111] py-16">
+      <section id="promos" class="bg-[#17171a] py-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-10 text-center">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Reseñas</p>
-            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Lo que dicen</h3>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Promociones</p>
+            <h3 class="mt-3 text-3xl font-black tracking-[-0.06em] text-ivory sm:text-4xl">Formas de pago que suman</h3>
           </div>
 
           <div class="grid gap-6 md:grid-cols-3">
-            <article class="border border-white/15 bg-[#181818] p-6 card-hover shadow-hard">
-              <div class="mb-4 flex text-white">★★★★★</div>
-              <p class="text-base leading-7 text-white/75">
-                “La calidad es excelente y la estética muy auténtica. Tiene ese look informal y bien hecho que se busca.”
-              </p>
-              <div class="mt-6 border-t border-white/10 pt-4">
-                <p class="font-semibold text-white">María L.</p>
-                <p class="text-sm text-white/55">Cliente</p>
-              </div>
+            <article class="soft-panel rounded-[26px] p-6 ring-gold">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-2xl">💳</div>
+              <h4 class="text-xl font-black tracking-[-0.04em] text-ivory">6 Cuotas sin interés</h4>
+              <p class="mt-3 text-base leading-7 text-ivory/70">Con tarjetas seleccionadas y total sin complicaciones.</p>
             </article>
 
-            <article class="border border-white/15 bg-[#181818] p-6 card-hover shadow-hard">
-              <div class="mb-4 flex text-white">★★★★★</div>
-              <p class="text-base leading-7 text-white/75">
-                “Pedí por WhatsApp y me ayudaron enseguida. El look es muy claro, cómodo y moderno.”
-              </p>
-              <div class="mt-6 border-t border-white/10 pt-4">
-                <p class="font-semibold text-white">Sofía R.</p>
-                <p class="text-sm text-white/55">Cliente premium</p>
-              </div>
+            <article class="soft-panel rounded-[26px] p-6 ring-gold">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-2xl">💵</div>
+              <h4 class="text-xl font-black tracking-[-0.04em] text-ivory">15% OFF en efectivo</h4>
+              <p class="mt-3 text-base leading-7 text-ivory/70">Descuento directo para una compra más conveniente y simple.</p>
             </article>
 
-            <article class="border border-white/15 bg-[#181818] p-6 card-hover shadow-hard">
-              <div class="mb-4 flex text-white">★★★★★</div>
-              <p class="text-base leading-7 text-white/75">
-                “Me gusta la vibra de la marca: directa, simple y muy wearable. Las prendas se sienten bien y se ven bien.”
-              </p>
-              <div class="mt-6 border-t border-white/10 pt-4">
-                <p class="font-semibold text-white">Lucía M.</p>
-                <p class="text-sm text-white/55">Cliente</p>
-              </div>
+            <article class="soft-panel rounded-[26px] p-6 ring-gold">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-2xl">📲</div>
+              <h4 class="text-xl font-black tracking-[-0.04em] text-ivory">10% OFF por transferencia</h4>
+              <p class="mt-3 text-base leading-7 text-ivory/70">Pago digital con beneficio extra y la mejor propuesta para ahorrarte.</p>
             </article>
           </div>
         </div>
       </section>
 
       <section id="contact" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <div class="border border-white/15 bg-[#111111] p-6 sm:p-8 shadow-hard">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Contacto</p>
-            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Ubicación y atención</h3>
-            <div class="mt-6 space-y-5 text-white/75">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="soft-panel rounded-[28px] p-6 sm:p-8 shadow-luxe">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Ubicación</p>
+            <h3 class="mt-3 text-3xl font-black tracking-[-0.06em] text-ivory sm:text-4xl">Encontranos en Córdoba</h3>
+            <div class="mt-6 space-y-5 text-ivory/75">
               <div>
-                <p class="text-sm uppercase tracking-[0.22em] text-white/60">Horarios</p>
-                <p class="mt-2 text-base">Lunes a Sábados de 17:00 a 21:00 hs.</p>
+                <p class="text-xs uppercase tracking-[0.22em] text-gold/80">Dirección</p>
+                <p class="mt-2 text-base">Alfonsina Storni 817, Barrio Liceo, Córdoba.</p>
               </div>
               <div>
-                <p class="text-sm uppercase tracking-[0.22em] text-white/60">Dirección</p>
-                <p class="mt-2 text-base">Av. Alfonsina Storni 717-701, X5019 Córdoba.</p>
+                <p class="text-xs uppercase tracking-[0.22em] text-gold/80">Horarios</p>
+                <p class="mt-2 text-base">Lunes a Sábados de 10:30 a 13:00 hs y de 17:30 a 21:00 hs.</p>
               </div>
               <div>
-                <p class="text-sm uppercase tracking-[0.22em] text-white/60">WhatsApp</p>
-                <p class="mt-2 text-base">+54 9 351 863-1873</p>
+                <p class="text-xs uppercase tracking-[0.22em] text-gold/80">Teléfono</p>
+                <p class="mt-2 text-base">+54 9 351 506 0531</p>
               </div>
             </div>
           </div>
 
-          <div class="border border-white/15 bg-[#111111] p-6 sm:p-8 shadow-hard">
-            <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">Redes</p>
-            <h3 class="mt-3 font-brutal text-4xl uppercase text-white sm:text-5xl">Seguinos</h3>
-            <div class="mt-6 grid gap-4 sm:grid-cols-2">
-              <a href="https://instagram.com/naturaleza_ropa" target="_blank" rel="noreferrer" class="border border-white/15 bg-[#181818] p-4 transition hover:border-white/35">
-                <p class="text-sm uppercase tracking-[0.2em] text-white/60">Instagram</p>
-                <p class="mt-2 text-lg font-semibold text-white">@naturaleza_ropa</p>
+          <div class="soft-panel rounded-[28px] p-6 sm:p-8 shadow-luxe">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Social</p>
+            <h3 class="mt-3 text-3xl font-black tracking-[-0.06em] text-ivory sm:text-4xl">Seguinos en Instagram</h3>
+            <div class="mt-6 rounded-[22px] border border-white/10 bg-[#121214] p-5">
+              <p class="text-xs uppercase tracking-[0.22em] text-gold/80">Instagram</p>
+              <p class="mt-3 text-xl font-black tracking-[-0.04em] text-ivory">@herenciajeans2026</p>
+              <a href="https://instagram.com/herenciajeans2026" target="_blank" rel="noreferrer" class="mt-5 inline-flex rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-gold transition hover:bg-gold/15">
+                Visitar perfil
               </a>
-              <a href="https://facebook.com/Naturaleza-ropa-inf" target="_blank" rel="noreferrer" class="border border-white/15 bg-[#181818] p-4 transition hover:border-white/35">
-                <p class="text-sm uppercase tracking-[0.2em] text-white/60">Facebook</p>
-                <p class="mt-2 text-lg font-semibold text-white">Naturaleza ropa inf</p>
-              </a>
-            </div>
-            <div class="mt-8 border border-white/15 bg-white p-4 text-black">
-              <p class="text-sm uppercase tracking-[0.2em] font-bold">Tip de compra</p>
-              <p class="mt-2 text-base leading-7 text-black/80">Consultá por WhatsApp para combinar looks, talles y disponibilidad antes de retirar o mandar.</p>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-white/10 bg-[#060606] py-6">
-      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-white/60 sm:flex-row sm:px-6 lg:px-8">
-        <p>© 2025 Naturalez Indumentaria Informal</p>
-        <p>Estilo casual, real y sin filtro.</p>
+    <footer class="border-t border-white/10 bg-[#0d0d0f] py-6">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-ivory/60 sm:flex-row sm:px-6 lg:px-8">
+        <p>© 2026 Herencia Jeans</p>
+        <p>Indumentaria informal y jeanswear con estilo auténtico.</p>
       </div>
     </footer>
 
     <a
-      href="https://wa.me/5493518631873?text=Hola%20Naturalez%20Indumentaria%20Informal%2C%20quiero%20consultar%20por%20la%20colecci%C3%B3n%20de%20ropa%20informal."
+      href="https://wa.me/5493515060531?text=Hola%20Herencia%20Jeans%2C%20quiero%20consultar%20por%20un%20pedido."
       target="_blank"
       rel="noreferrer"
-      class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center bg-[#25D366] text-2xl shadow-2xl shadow-green-500/25 transition hover:scale-105"
+      class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl shadow-2xl shadow-green-500/25 transition hover:scale-105"
       aria-label="Chatear por WhatsApp"
     >
       💬
     </a>
 
-    <div id="cartModal" class="fixed inset-0 z-50 hidden bg-black/70 p-4 backdrop-blur-sm">
+    <div id="cartModal" class="fixed inset-0 z-50 hidden bg-black/75 p-4 backdrop-blur-sm">
       <div class="mx-auto flex h-full max-w-2xl items-center justify-center">
-        <div class="w-full border border-white/15 bg-[#111111] shadow-2xl shadow-black/40">
+        <div class="w-full rounded-[28px] border border-white/10 bg-[#17171a] shadow-2xl shadow-black/40">
           <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <h3 class="font-brutal text-2xl uppercase text-white">Tu carrito</h3>
-            <button id="closeCart" class="text-2xl text-white/70 transition hover:text-white">×</button>
+            <h3 class="text-xl font-black tracking-[-0.04em] text-ivory">Tu carrito</h3>
+            <button id="closeCart" class="text-2xl text-ivory/70 transition hover:text-gold">×</button>
           </div>
 
-          <div class="max-h-[55vh] overflow-y-auto px-5 py-4 scrollbar-thin">
+          <div class="max-h-[56vh] overflow-y-auto px-5 py-4 scrollbar-thin">
             <div id="cartItems" class="space-y-3"></div>
           </div>
 
           <div class="border-t border-white/10 px-5 py-5">
-            <div class="mb-4 flex items-center justify-between text-white/80">
-              <span class="text-sm uppercase tracking-[0.14em]">Total</span>
-              <span id="totalPrice" class="font-brutal text-3xl text-white">$0</span>
+            <div class="mb-4 flex items-center justify-between text-ivory/80">
+              <span class="text-xs uppercase tracking-[0.18em]">Total</span>
+              <span id="totalPrice" class="text-2xl font-black text-gold">$0</span>
             </div>
 
             <div class="space-y-3">
               <label class="block">
-                <span class="mb-1.5 block text-sm text-white/70">Nombre del cliente</span>
-                <input id="customerName" type="text" placeholder="Ej: María López" class="w-full border border-white/15 bg-[#181818] px-3 py-3 text-white outline-none transition focus:border-white/40" />
+                <span class="mb-1.5 block text-sm text-ivory/70">Nombre del cliente</span>
+                <input id="customerName" type="text" placeholder="Ej: Sofía Ramírez" class="w-full rounded-xl border border-white/10 bg-[#111214] px-3 py-3 text-ivory outline-none transition focus:border-gold/50" />
               </label>
 
               <label class="block">
-                <span class="mb-1.5 block text-sm text-white/70">Método de entrega</span>
-                <select id="shippingMethod" class="w-full border border-white/15 bg-[#181818] px-3 py-3 text-white outline-none transition focus:border-white/40">
-                  <option value="Retiro en local (Av. Alfonsina Storni 717)">Retiro en local (Av. Alfonsina Storni 717)</option>
+                <span class="mb-1.5 block text-sm text-ivory/70">Método de pago</span>
+                <select id="paymentMethod" class="w-full rounded-xl border border-white/10 bg-[#111214] px-3 py-3 text-ivory outline-none transition focus:border-gold/50">
+                  <option value="Efectivo">Efectivo (-15%)</option>
+                  <option value="Transferencia">Transferencia (-10%)</option>
+                  <option value="Tarjeta">Tarjeta (6 cuotas sin interés)</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="mb-1.5 block text-sm text-ivory/70">Opción de entrega</span>
+                <select id="deliveryMethod" class="w-full rounded-xl border border-white/10 bg-[#111214] px-3 py-3 text-ivory outline-none transition focus:border-gold/50">
+                  <option value="Retiro en local (Alfonsina Storni 817, Barrio Liceo)">Retiro en local (Alfonsina Storni 817, Barrio Liceo)</option>
                   <option value="Envío a domicilio">Envío a domicilio</option>
                 </select>
               </label>
             </div>
 
-            <button id="checkoutButton" class="mt-5 w-full border border-white/15 bg-white px-5 py-3 text-sm font-black uppercase tracking-[0.16em] text-black transition hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-hard">
+            <button id="checkoutButton" class="mt-5 w-full rounded-full gold-gradient px-5 py-3 text-sm font-black uppercase tracking-[0.14em] text-[#121212] transition hover:brightness-110">
               Finalizar Pedido por WhatsApp
             </button>
           </div>
@@ -442,14 +366,14 @@
 
     <script>
       const products = [
-        { id: 1, name: 'Conjunto N1', category: 'Jóvenes', price: 24500, image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 2, name: 'Conjunto N2', category: 'Jóvenes', price: 26900, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 3, name: 'Conjunto N3', category: 'Jóvenes', price: 28900, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 4, name: 'Conjunto N4', category: 'Jóvenes', price: 31900, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', tag: 'Jóvenes' },
-        { id: 5, name: 'Conjunto N5', category: 'Niños', price: 19900, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
-        { id: 6, name: 'Conjunto N6', category: 'Niños', price: 21900, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80', tag: 'Niños' },
-        { id: 7, name: 'Mochila N7', category: 'Accesorios/Otras Prendas', price: 12900, image: 'https://images.unsplash.com/photo-1521369909026-2afed882baee?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
-        { id: 8, name: 'Gorra N8', category: 'Accesorios/Otras Prendas', price: 14900, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80', tag: 'Accesorios' },
+        { id: 1, name: 'Oxford Slim', category: 'Jeans & Pantalones', price: 18990, image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80', tag: 'Jean' },
+        { id: 2, name: 'Cargo Classic', category: 'Jeans & Pantalones', price: 21490, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80', tag: 'Jean' },
+        { id: 3, name: 'Basic Oversize', category: 'Remeras & Tops', price: 12990, image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80', tag: 'Ropa' },
+        { id: 4, name: 'Línea Street', category: 'Remeras & Tops', price: 14990, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80', tag: 'Ropa' },
+        { id: 5, name: 'Jacket Urban', category: 'Abrigos & Jackets', price: 32990, image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80', tag: 'Abrigo' },
+        { id: 6, name: 'Bomber Heritage', category: 'Abrigos & Jackets', price: 28990, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80', tag: 'Abrigo' },
+        { id: 7, name: 'Straight Fit', category: 'Jeans & Pantalones', price: 19990, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', tag: 'Jean' },
+        { id: 8, name: 'Top Minimal', category: 'Remeras & Tops', price: 11990, image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80', tag: 'Ropa' },
       ];
 
       const state = {
@@ -480,18 +404,18 @@
         productGrid.innerHTML = filtered
           .map(
             (product) => `
-              <article class="group overflow-hidden border border-white/15 bg-[#111111] card-hover shadow-hard">
+              <article class="group overflow-hidden rounded-[26px] border border-white/10 bg-[#1b1b1f] card-hover shadow-luxe">
                 <div class="relative overflow-hidden">
-                  <img src="${product.image}" alt="${product.name}" class="product-image w-full grayscale transition duration-500 group-hover:scale-105" />
-                  <span class="absolute left-3 top-3 border border-white/15 bg-black/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">
+                  <img src="${product.image}" alt="${product.name}" class="product-image w-full transition duration-500 group-hover:scale-105" />
+                  <span class="absolute left-3 top-3 rounded-full border border-gold/30 bg-[#101113]/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gold">
                     ${product.tag}
                   </span>
                 </div>
                 <div class="p-5">
-                  <h4 class="font-brutal text-2xl uppercase text-white">${product.name}</h4>
-                  <div class="mt-3 flex items-center justify-between gap-3">
-                    <span class="font-brutal text-2xl text-white">${formatPrice(product.price)}</span>
-                    <button data-add="${product.id}" class="add-to-cart border border-white/15 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-black transition hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-hard">
+                  <h4 class="text-lg font-black tracking-[-0.04em] text-ivory">${product.name}</h4>
+                  <div class="mt-3 flex items-center justify-between">
+                    <span class="text-xl font-black text-gold">${formatPrice(product.price)}</span>
+                    <button data-add="${product.id}" class="add-to-cart rounded-full border border-gold/40 bg-gold px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-[#151515] transition hover:brightness-110">
                       + Agregar
                     </button>
                   </div>
@@ -526,8 +450,8 @@
       function renderCart() {
         if (!state.cart.length) {
           cartItems.innerHTML = `
-            <div class="rounded-none border border-dashed border-white/15 bg-[#181818] p-6 text-center">
-              <p class="text-base text-white/70">Tu carrito está vacío.</p>
+            <div class="rounded-2xl border border-dashed border-white/15 bg-[#111214] p-6 text-center">
+              <p class="text-base text-ivory/75">Tu carrito está vacío.</p>
             </div>
           `;
           cartCount.textContent = '0';
@@ -547,18 +471,18 @@
         cartItems.innerHTML = cartProducts
           .map(
             (item) => `
-              <div class="flex items-center gap-3 border border-white/15 bg-[#181818] p-3">
-                <img src="${item.image}" alt="${item.name}" class="h-20 w-20 rounded-none object-cover grayscale" />
+              <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#111214] p-3">
+                <img src="${item.image}" alt="${item.name}" class="h-20 w-20 rounded-xl object-cover" />
                 <div class="min-w-0 flex-1">
-                  <p class="truncate text-sm font-semibold text-white">${item.name}</p>
-                  <p class="mt-1 text-sm text-white/70">${formatPrice(item.price)}</p>
+                  <p class="truncate text-sm font-semibold text-ivory">${item.name}</p>
+                  <p class="mt-1 text-sm text-gold">${formatPrice(item.price)}</p>
                 </div>
-                <div class="flex items-center gap-2 border border-white/15 bg-black px-2 py-1">
-                  <button data-action="decrement" data-id="${item.id}" class="qty-btn text-lg text-white/80 transition hover:text-white">−</button>
-                  <span class="min-w-[22px] text-center text-sm font-semibold text-white">${item.quantity}</span>
-                  <button data-action="increment" data-id="${item.id}" class="qty-btn text-lg text-white/80 transition hover:text-white">+</button>
+                <div class="flex items-center gap-2 rounded-full border border-white/10 bg-[#0c0d0f] px-2 py-1">
+                  <button data-action="decrement" data-id="${item.id}" class="qty-btn text-lg text-ivory/70 transition hover:text-gold">−</button>
+                  <span class="min-w-[22px] text-center text-sm font-semibold text-ivory">${item.quantity}</span>
+                  <button data-action="increment" data-id="${item.id}" class="qty-btn text-lg text-ivory/70 transition hover:text-gold">+</button>
                 </div>
-                <button data-action="remove" data-id="${item.id}" class="ml-1 text-sm text-white/50 transition hover:text-white">Eliminar</button>
+                <button data-action="remove" data-id="${item.id}" class="ml-1 text-sm text-ivory/50 transition hover:text-red-300">Eliminar</button>
               </div>
             `
           )
@@ -594,6 +518,18 @@
         renderCart();
       }
 
+      function getDiscountedTotal(subtotal, paymentMethod) {
+        if (paymentMethod === 'Efectivo') return subtotal * 0.85;
+        if (paymentMethod === 'Transferencia') return subtotal * 0.90;
+        return subtotal;
+      }
+
+      function getPaymentLabel(paymentMethod) {
+        if (paymentMethod === 'Efectivo') return 'Efectivo (-15%)';
+        if (paymentMethod === 'Transferencia') return 'Transferencia (-10%)';
+        return 'Tarjeta (6 cuotas sin interés)';
+      }
+
       function openCart() {
         cartModal.classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
@@ -607,13 +543,14 @@
       document.querySelectorAll('.filter-btn').forEach((button) => {
         button.addEventListener('click', () => {
           state.activeCategory = button.dataset.category;
+
           document.querySelectorAll('.filter-btn').forEach((btn) => {
-            btn.classList.remove('bg-white', 'text-black');
-            btn.classList.add('bg-transparent', 'text-white/80', 'border-white/15');
+            btn.classList.remove('bg-gold', 'text-[#141414]');
+            btn.classList.add('bg-white/5', 'text-ivory/75', 'border-white/10');
           });
 
-          button.classList.remove('bg-transparent', 'text-white/80', 'border-white/15');
-          button.classList.add('bg-white', 'text-black', 'border-white');
+          button.classList.remove('bg-white/5', 'text-ivory/75', 'border-white/10');
+          button.classList.add('bg-gold', 'text-[#141414]', 'border-gold/40');
 
           renderProducts();
         });
@@ -627,36 +564,44 @@
 
       document.getElementById('checkoutButton').addEventListener('click', () => {
         if (!state.cart.length) {
-          alert('Tu carrito está vacío. Agrega productos antes de finalizar.');
+          alert('Tu carrito está vacío. Agregá productos antes de finalizar.');
           return;
         }
 
         const customerName = document.getElementById('customerName').value.trim();
-        const shippingMethod = document.getElementById('shippingMethod').value;
+        const paymentMethod = document.getElementById('paymentMethod').value;
+        const deliveryMethod = document.getElementById('deliveryMethod').value;
 
         if (!customerName) {
           alert('Ingresá el nombre del cliente para continuar.');
           return;
         }
 
-        const cartProducts = state.cart.map((item) => {
-          const product = products.find((p) => p.id === item.id);
-          return `- ${product.name} x${item.quantity} (${formatPrice(product.price * item.quantity)})`;
-        });
-
-        const total = state.cart.reduce((acc, item) => {
+        const subtotal = state.cart.reduce((acc, item) => {
           const product = products.find((p) => p.id === item.id);
           return acc + product.price * item.quantity;
         }, 0);
 
-        const message = `Hola Naturalez Indumentaria Informal, quiero confirmar mi pedido.%0A%0A` +
-          `Cliente: ${customerName}%0A` +
-          `Método de entrega: ${shippingMethod}%0A%0A` +
-          `Productos:%0A${cartProducts.join('%0A')}%0A%0A` +
-          `Total: ${formatPrice(total)}%0A%0A` +
-          `¿Tienen disponibilidad para coordinar este pedido?`;
+        const discountedTotal = getDiscountedTotal(subtotal, paymentMethod);
+        const discountAmount = subtotal - discountedTotal;
 
-        const waLink = `https://wa.me/5493518631873?text=${message}`;
+        const cartLines = state.cart.map((item) => {
+          const product = products.find((p) => p.id === item.id);
+          let subtotalLine = product.price * item.quantity;
+          return `- ${product.name} x${item.quantity} (${formatPrice(subtotalLine)})`;
+        });
+
+        const message = `Hola Herencia Jeans, quiero confirmar mi pedido.%0A%0A` +
+          `Cliente: ${customerName}%0A` +
+          `Método de pago: ${getPaymentLabel(paymentMethod)}%0A` +
+          `Entrega: ${deliveryMethod}%0A%0A` +
+          `Productos:%0A${cartLines.join('%0A')}%0A%0A` +
+          `Subtotal: ${formatPrice(subtotal)}%0A` +
+          `Descuento aplicado: ${formatPrice(discountAmount)}%0A` +
+          `Total final: ${formatPrice(discountedTotal)}%0A%0A` +
+          `¿Podrían confirmarme la disponibilidad y coordinar esta compra?`;
+
+        const waLink = `https://wa.me/5493515060531?text=${message}`;
         window.open(waLink, '_blank');
       });
 
